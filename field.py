@@ -1,3 +1,6 @@
+# SRS[16] - Field Widget
+
+
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
@@ -81,7 +84,7 @@ class FieldWindow(Gtk.Window):
         listbox.add(row_6)
 
         #Mask
-        row_7 = Gtk.ListBoxRow()
+        row_7 = Gtk.ListBoxRow()constraintInput
         box_7 = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=100)
         row_7.add(box_7)
         label = Gtk.Label("Mask")
@@ -106,7 +109,7 @@ class FieldWindow(Gtk.Window):
         row_9.add(box_9)
         label = Gtk.Label("Required")
         requiredBox = Gtk.CheckButton()
-        box_9.pack_start(label, True, True, 0)
+        box_9.pack_start(label, True, True, 0)constraintInput
         box_9.pack_start(requiredBox, True, True, 0)
         listbox.add(row_9)
 
