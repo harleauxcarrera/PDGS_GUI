@@ -12,6 +12,9 @@ class BuilderCanvasOptions(Gtk.Window):
         self.add(grid)
         self.set_default_size(300,50)
 
+
+        FieldLabel = Gtk.Label("Field Menu")
+
         StartField = Gtk.Button("StartField")
         StartField.connect("clicked", self.button_pressed)
 
@@ -36,6 +39,8 @@ class BuilderCanvasOptions(Gtk.Window):
         PacketInfo = Gtk.Button.new_with_mnemonic("Packet Info")
         PacketInfo.connect("clicked", self.button_pressed)
 
+        #attaching buttons to the grid, attach function(button, column, row, column size, row size)
+        grid.attach(FieldLabel, 0, 0 , 4, 1)
         grid.attach(StartField, 1, 1, 1, 1)
         grid.attach(Field1Byte, 2, 1, 1, 1)
         grid.attach(Field2Byte, 3, 1, 1, 1)
