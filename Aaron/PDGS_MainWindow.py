@@ -8,7 +8,7 @@ from gi.repository import Gtk
 class MainWindow(Gtk.Window):
 
     def __init__(self):
-        Gtk.Window.__init__(self, title="Grid Example")
+        Gtk.Window.__init__(self, title="Protocol Dissector Generator System")
 
         grid = Gtk.Grid()
         self.add(grid)
@@ -24,6 +24,7 @@ class MainWindow(Gtk.Window):
         GenerateDissectorScriptButton = Gtk.Button(label="Generate Dissector Script")
         OrganizeViewsButton = Gtk.Button(label="Organize Views")
         OpenPCAPButton = Gtk.Button(label="Open PCAP")
+        testChildWindow = Gtk.Window(title="test")
 
         CreateProjectButton.connect("clicked", self.create_Project)
 
@@ -39,6 +40,7 @@ class MainWindow(Gtk.Window):
         grid.attach_next_to(GenerateDissectorScriptButton, ExportProjectButton, Gtk.PositionType.RIGHT, 8, 1)
         grid.attach_next_to(OrganizeViewsButton, GenerateDissectorScriptButton, Gtk.PositionType.RIGHT, 8, 1)
         grid.attach_next_to(OpenPCAPButton, OrganizeViewsButton, Gtk.PositionType.RIGHT, 8, 1)
+        grid.attach_next_to(testChildWindow, CreateProjectButton, Gtk.PositionType.BOTTOM, 1, 3)
 
 
 
