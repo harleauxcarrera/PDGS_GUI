@@ -9,7 +9,13 @@ class MainWindow(Gtk.Window):
 
 		# Box
 		self.box = Gtk.Box(spacing = 5)
-		self.add(self.box)
+		PDGSLabel = Gtk.Box(spacing = 10)
+
+		self.box.pack_start(PDGSLabel, True, True, 0)
+
+		label = Gtk.Label()
+		label.set_markup("<big>Protocol Dissector Generator System</big>")
+		PDGSLabel.pack_start(label, True, True, 0)
 
 		#Create Project Button
 		self.CreateProjectButton = Gtk.Button(label="Create Project")
@@ -56,6 +62,8 @@ class MainWindow(Gtk.Window):
 		self.OrganizeViewsButton.connect("clicked", self.OpenPCAPButton_clicked)
 		self.box.pack_start(self.OpenPCAPButton, True, True, 0)
 
+		self.add(self.box)
+
 
 	#User clicks CreateProjectButton
 	def CreateProjectButton_clicked(self, widget):
@@ -94,10 +102,7 @@ class MainWindow(Gtk.Window):
 		print("Open PCAP")
 
 window = MainWindow()
-label = Gtk.Label()
-label.set_label("Protocol Dissector Generator System")
-window.add(label)
-
+window.set_default_size(1000, 700)
 window.connect("delete-event", Gtk.main_quit)
 window.show_all()
 Gtk.main()
