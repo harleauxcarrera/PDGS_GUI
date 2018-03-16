@@ -68,9 +68,4 @@ class OpenPCAPWindow(Gtk.Window):
 
     def on_close_clicked(self, button):
         print("Closing application")
-        Gtk.main_quit()
-
-win = OpenPCAPWindow()
-win.connect("delete-event", Gtk.main_quit)
-win.show_all()
-Gtk.main()
+        self.destroy()

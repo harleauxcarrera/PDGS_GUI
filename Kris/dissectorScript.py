@@ -2,22 +2,32 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-class PathChooserWindow(Gtk.Window):
+class DissectorScriptWindow(Gtk.Window):
 
     def __init__(self):
-        Gtk.Window.__init__(self, title="Workspace Launcher")
+        Gtk.Window.__init__(self, title="Dissector Script")
 
         grid = Gtk.Grid()
         self.add(grid)
-        self.set_default_size(300,50)
+        self.set_default_size(200,50)
 
-        desc = Gtk.Label("Select a directory as workspace.")
-        name = Gtk.Label("Workspace:  ")
+        desc = Gtk.Label("Generate a custom dissector script from a selected project.")
+        name = Gtk.Label("Project:  ")
 
+        button1 = Gtk.Button("Browse")
+        button1.connect("clicked", self.on_file_clicked)
+
+        dformat = Gtk.Label("Dissector Format:  ")
+        formatInput = Gtk.ComboBoxText()
+        formatInput.insert(0,"0","Format 1")
+        formatInput.insert(1,"1","Format 2")
+        formatInput.insert(2,"2","etc..")
+
+        location = Gtk.Label("Save Location:  ")
         button2 = Gtk.Button("Browse")
         button2.connect("clicked", self.on_folder_clicked)
 
-        createButton = Gtk.Button.new_with_mnemonic("Launch")
+        createButton = Gtk.Button.new_with_mnemonic("Generate")
         createButton.connect("clicked", self.on_open_clicked)
 
         cancelButton = Gtk.Button.new_with_mnemonic("_Cancel")
@@ -25,10 +35,32 @@ class PathChooserWindow(Gtk.Window):
 
         grid.add(desc)
         grid.attach_next_to(name, desc, Gtk.PositionType.BOTTOM, 1,1)
-        grid.attach(button2, 1, 1, 2, 1)
-        grid.attach(createButton, 1, 2, 1, 1)
-        grid.attach(cancelButton, 2, 2, 1, 1)
+        grid.attach_next_to(dformat, name, Gtk.PositionType.BOTTOM, 1,1)
+        grid.attach_next_to(location, dformat, Gtk.PositionType.BOTTOM, 1,1)
 
+        grid.attach(button1, 1, 1, 2, 1)
+        grid.attach(formatInput, 1, 2, 2, 1)
+        grid.attach(button2, 1, 3, 2, 1)
+
+        grid.attach(createButton, 1, 4, 1, 1)
+        grid.attach(cancelButton, 2, 4, 1, 1)
+
+    def on_file_clicked(self, widget):
+        dialog = Gtk.FileChooserDialog("Please choose a file", self,
+            Gtk.FileChooserAction.OPEN,
+            (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
+             Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
+
+        self.add_filters(dialog)
+
+        response = dialog.run()
+        if response == Gtk.ResponseType.OK:
+            print("Open clicked")
+            print("File selected: " + dialog.get_filename())
+        elif response == Gtk.ResponseType.CANCEL:
+            print("Cancel clicked")
+
+        dialog.destroy()
 
     def add_filters(self, dialog):
         filter_text = Gtk.FileFilter()
@@ -64,7 +96,7 @@ class PathChooserWindow(Gtk.Window):
 
 
     def on_open_clicked(self, button):
-        print("Workspace was created")
+        print("Dissector Script was created")
 
     def on_close_clicked(self, button):
         print("Closing application")
