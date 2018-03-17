@@ -5,11 +5,13 @@ from gi.repository import Gtk
 class FileChooserWindow(Gtk.Window):
 
     def __init__(self):
-        Gtk.Window.__init__(self, title="FileChooser Example")
+        Gtk.Window.__init__(self, title="Project Navigator")
 
         box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL,spacing=6)
         self.add(box)
-        self.set_default_size(100,600)
+        self.set_default_size(200,700)
+        label1 = Gtk.Label("Workspace ...")
+        box.add(label1)
 
         button1 = Gtk.Button("Choose File")
         button1.connect("clicked", self.on_file_clicked)
