@@ -7,7 +7,7 @@ class BuilderCanvas(Gtk.Window):
     def __init__(self):
         Gtk.Window.__init__(self, title="Builder Canvas")
 
-        self.set_default_size(500,500)
+        self.set_default_size(600,600)
 
 window = BuilderCanvas()
 window.show_all()

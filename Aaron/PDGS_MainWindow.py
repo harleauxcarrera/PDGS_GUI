@@ -1,6 +1,6 @@
 import gi
 import createProject as createProjectWindow
-
+#import projectImport as importProjectWindow
 
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
@@ -8,7 +8,7 @@ from gi.repository import Gtk
 class MainWindow(Gtk.Window):
 
     def __init__(self):
-        Gtk.Window.__init__(self, title="Grid Example")
+        Gtk.Window.__init__(self, title="Protocol Dissector Generator System")
 
         grid = Gtk.Grid()
         self.add(grid)
@@ -24,8 +24,17 @@ class MainWindow(Gtk.Window):
         GenerateDissectorScriptButton = Gtk.Button(label="Generate Dissector Script")
         OrganizeViewsButton = Gtk.Button(label="Organize Views")
         OpenPCAPButton = Gtk.Button(label="Open PCAP")
+        testChildWindow = Gtk.Window(title="test")
 
         CreateProjectButton.connect("clicked", self.create_Project)
+        #SaveProjectButton.connect("clicked", self.save_Project)
+        #CloseProjectButton.connect("clicked", self.close_Project)
+        #SwitchWorkspaceButton.connect("clicked", self.switch_Workspace)
+        #ImportProjectButton.connect("clicked", self.import_Project)
+        #ExportProjectButton.connect("clicked", self.export_Project)
+        #GenerateDissectorScriptButton.connect("clicked", self.generate_Script)
+        #OrganizeViewsButton.connect("clicked", self.organize_Views)
+        #OpenPCAPButton.connect("clicked", self.open_PCAP)
 
 
 
@@ -40,6 +49,8 @@ class MainWindow(Gtk.Window):
         grid.attach_next_to(OrganizeViewsButton, GenerateDissectorScriptButton, Gtk.PositionType.RIGHT, 8, 1)
         grid.attach_next_to(OpenPCAPButton, OrganizeViewsButton, Gtk.PositionType.RIGHT, 8, 1)
 
+        grid.attach_next_to(testChildWindow, CreateProjectButton, Gtk.PositionType.BOTTOM, 1, 3)
+       	#grid.add(testChildWindow)
 
 
     def create_Project(self, button):
@@ -49,7 +60,12 @@ class MainWindow(Gtk.Window):
     	win2.connect("destroy", self.destroy)
     	win2.show_all()
 
-
+    def import_Project(self, button):
+    	print("Import Project")
+    	#button action
+    	win3 = importProjectWindow.GridWindow()
+    	win3.connect("destroy", self.destroy)
+    	win3.show_all()
 
 
 

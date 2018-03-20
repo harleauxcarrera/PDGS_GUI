@@ -45,6 +45,8 @@ class GridWindow(Gtk.Window):
         grid.attach_next_to(depPattern,depProto, Gtk.PositionType.BOTTOM, 1,1 )
         grid.attach(pattern, 1, 3, 4, 1)
 
+        button1 = Gtk.Button("OK")
+        grid.attach_next_to(button1, pattern, Gtk.PositionType.BOTTOM, 1, 1)
 
 
 

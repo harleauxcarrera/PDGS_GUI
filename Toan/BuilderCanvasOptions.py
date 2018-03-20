@@ -10,7 +10,7 @@ class BuilderCanvasOptions(Gtk.Window):
 
         grid = Gtk.Grid()
         self.add(grid)
-        self.set_default_size(300,50)
+        self.set_default_size(300,100)
 
 
         FieldLabel = Gtk.Label("Field Menu")
@@ -32,6 +32,7 @@ class BuilderCanvasOptions(Gtk.Window):
 
         EndField = Gtk.Button.new_with_mnemonic("EndField")
         EndField.connect("clicked", self.button_pressed)
+
 
         ReferenceList = Gtk.Button.new_with_mnemonic("Reference List")
         ReferenceList.connect("clicked", self.button_pressed)
