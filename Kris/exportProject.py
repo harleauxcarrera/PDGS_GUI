@@ -2,47 +2,39 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-class DissectorScriptWindow(Gtk.Window):
+class exportProjectWindow(Gtk.Window):
 
     def __init__(self):
-        Gtk.Window.__init__(self, title="Dissector Script")
+        Gtk.Window.__init__(self, title="Export Project")
 
         grid = Gtk.Grid()
         self.add(grid)
         self.set_default_size(200,50)
 
-        desc = Gtk.Label("Generate a custom dissector script from a selected project.")
+        desc = Gtk.Label("Export a project to the local file system.")
         name = Gtk.Label("Project:  ")
 
         button1 = Gtk.Button("Browse")
         button1.connect("clicked", self.on_file_clicked)
 
-        dformat = Gtk.Label("Dissector Format:  ")
-        formatInput = Gtk.ComboBoxText()
-        formatInput.insert(0,"0","Format 1")
-        formatInput.insert(1,"1","Format 2")
-        formatInput.insert(2,"2","etc..")
-
-        location = Gtk.Label("Save Location:  ")
+        location = Gtk.Label("To export file:  ")
         button2 = Gtk.Button("Browse")
         button2.connect("clicked", self.on_folder_clicked)
 
-        createButton = Gtk.Button.new_with_mnemonic("Generate")
-        createButton.connect("clicked", self.on_open_clicked)
+        exportButton = Gtk.Button.new_with_mnemonic("Export")
+        exportButton.connect("clicked", self.on_open_clicked)
 
         cancelButton = Gtk.Button.new_with_mnemonic("_Cancel")
         cancelButton.connect("clicked", self.on_close_clicked)
 
         grid.add(desc)
         grid.attach_next_to(name, desc, Gtk.PositionType.BOTTOM, 1,1)
-        grid.attach_next_to(dformat, name, Gtk.PositionType.BOTTOM, 1,1)
-        grid.attach_next_to(location, dformat, Gtk.PositionType.BOTTOM, 1,1)
+        grid.attach_next_to(location, name, Gtk.PositionType.BOTTOM, 1,1)
 
         grid.attach(button1, 1, 1, 2, 1)
-        grid.attach(formatInput, 1, 2, 2, 1)
-        grid.attach(button2, 1, 3, 2, 1)
+        grid.attach(button2, 1, 2, 2, 1)
 
-        grid.attach(createButton, 1, 4, 1, 1)
+        grid.attach(exportButton, 1, 4, 1, 1)
         grid.attach(cancelButton, 2, 4, 1, 1)
 
     def on_file_clicked(self, widget):
@@ -102,7 +94,7 @@ class DissectorScriptWindow(Gtk.Window):
         print("Closing application")
         self.destroy()
 
-'''win = DissectorScriptWindow()
+'''win = exportProjectWindow()
 win.connect("delete-event", Gtk.main_quit)
 win.show_all()
 Gtk.main()'''
