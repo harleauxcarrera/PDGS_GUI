@@ -2,10 +2,10 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-class OpenPCAP(Gtk.Window):
+class ImportProject(Gtk.Window):
 
     def __init__(self):
-        Gtk.Window.__init__(self, title="Open PCAP")
+        Gtk.Window.__init__(self, title = "Project Import")
 
         # Main Box
         box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL, spacing = 5)
@@ -15,42 +15,42 @@ class OpenPCAP(Gtk.Window):
         labelBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
         labelBox.set_homogeneous(False)
 
-        # PCAP Box
-        PCAPBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
-        PCAPBox.set_homogeneous(False)
+        # Project Box
+        projectBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
+        projectBox.set_homogeneous(False)
 
         # Button Box
         buttonBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
         buttonBox.set_homogeneous(False)
 
         box.pack_start(labelBox, True, True, 5)
-        box.pack_start(PCAPBox, True, True, 5)
+        box.pack_start(projectBox, True, True, 5)
         box.pack_start(buttonBox, True, True, 5)
 
         # Main Label
-        label = Gtk.Label("Open a PCAP file")
+        label = Gtk.Label("Import a project into the current workspace.")
         label.set_justify(Gtk.Justification.CENTER)
         labelBox.pack_start(label, True, True, 5)
 
-        # PCAP Name Label
-        pcapName = Gtk.Label("PCAP Name")
-        pcapName.set_justify(Gtk.Justification.RIGHT)
-        PCAPBox.pack_start(pcapName, True, True, 5)
+        # Project Name Label
+        project = Gtk.Label("Project")
+        project.set_justify(Gtk.Justification.RIGHT)
+        projectBox.pack_start(project, True, True, 5)
 
-        # PCAP Name Entry Field
+        # Project Name Entry Field
         self.entry = Gtk.Entry()
-        self.entry.set_text("PCAP File")
-        PCAPBox.pack_start(self.entry, True, True, 5)
+        self.entry.set_text("Project Name")
+        projectBox.pack_start(self.entry, True, True, 5)
 
         # Browse Button
-        browseButton = Gtk.Button(label = "Browse")
-        browseButton.connect("clicked", self.browse_clicked)
-        PCAPBox.pack_start(browseButton, True, True, 5)
+        projectBrowseButton = Gtk.Button(label = "Browse")
+        projectBrowseButton.connect("clicked", self.browse_clicked)
+        projectBox.pack_start(projectBrowseButton, True, True, 5)
 
-        # Open Button
-        openButton = Gtk.Button(label = "Open")
-        openButton.connect("clicked", self.open_clicked)
-        buttonBox.pack_start(openButton, True, True, 5)
+        # Import Button
+        importButton = Gtk.Button(label = "Import")
+        importButton.connect("clicked", self.import_clicked)
+        buttonBox.pack_start(importButton, True, True, 5)
 
         # Cancel Button
         cancelButton = Gtk.Button(label = "Cancel")
@@ -58,9 +58,9 @@ class OpenPCAP(Gtk.Window):
         buttonBox.pack_start(cancelButton, True, True, 5)
 
 
-    # Opens a PCAP file browser
+    # Opens a file browser
     def browse_clicked(self, button):
-        dialog = Gtk.FileChooserDialog("Please choose a PCAP file", self, Gtk.FileChooserAction.OPEN, (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, "Select", Gtk.ResponseType.OK))
+        dialog = Gtk.FileChooserDialog("Please choose a file", self, Gtk.FileChooserAction.OPEN, (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, "Select", Gtk.ResponseType.OK))
         dialog.set_default_size(800, 400)
 
         response = dialog.run()
@@ -72,9 +72,9 @@ class OpenPCAP(Gtk.Window):
 
         dialog.destroy()
 
-    # Open button 
-    def open_clicked(self, button):
-        print("Open")
+    # Import button 
+    def import_clicked(self, button):
+        print("Import")
         self.destroy()
 
     # Cancel button

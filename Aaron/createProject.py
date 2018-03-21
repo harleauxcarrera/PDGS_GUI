@@ -1,48 +1,79 @@
-#Heyi Liu
-#New Project Widget SRS[6]
-
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-class GridWindow(Gtk.Window):
+class CreateProject(Gtk.Window):
 
     def __init__(self):
-        Gtk.Window.__init__(self,
-        title="Create New Project")
+        Gtk.Window.__init__(self, title="New Project")
 
-        grid = Gtk.Grid()
-        self.add(grid)
-        self.set_default_size(300,50)
+        # Main Box
+        box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL, spacing = 5)
+        self.add(box)
 
-        name = Gtk.Label("Name:  ")
-        nameInput = Gtk.Entry()
+        # Label Box         
+        labelBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
+        labelBox.set_homogeneous(False)
 
-        desc = Gtk.Label("Description:  ")
-        descInput = Gtk.Entry()
+        # Project Name Box
+        projectNameBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
+        projectNameBox.set_homogeneous(False)
 
-        createButton = Gtk.Button.new_with_mnemonic("Create")
-        createButton.connect("clicked", self.on_open_clicked)
+        # Description Box
+        descriptionBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
+        descriptionBox.set_homogeneous(False)
 
-        cancelButton = Gtk.Button.new_with_mnemonic("_Cancel")
-        cancelButton.connect("clicked", self.on_close_clicked)
+        # Button Box
+        buttonBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
+        buttonBox.set_homogeneous(False)
+        
+        box.pack_start(labelBox, True, True, 0)
+        box.pack_start(projectNameBox, True, True, 0)
+        box.pack_start(descriptionBox, True, True, 0)
+        box.pack_start(buttonBox, True, True, 0)
 
-        #Add Properties and inputs to grid#
-        #attach(addedWidget, leftAttach, topAttach, widthRow, heighColumn)#
-        #attach_next_to(addedWidget, attachedToSibling, sideofSiblingToAttackTo, width, height)#
+        # Title Label Area
+        label = Gtk.Label("Create a new project.")
+        label.set_justify(Gtk.Justification.CENTER)
+        labelBox.pack_start(label, True, True, 5)
 
-        grid.add(name)
-        grid.attach(nameInput, 1, 0, 6, 1)
+        # Project Name Label
+        workspace = Gtk.Label("Project Name")
+        workspace.set_justify(Gtk.Justification.RIGHT)
+        projectNameBox.pack_start(workspace, True, True, 5)
 
-        grid.attach_next_to(desc,name, Gtk.PositionType.BOTTOM, 1,1 )
-        grid.attach(descInput, 1, 1, 6, 1)
+        # Project Name Entry Field
+        self.entry = Gtk.Entry()
+        self.entry.set_text("Project Name")
+        projectNameBox.pack_start(self.entry, True, True, 5)
 
-        grid.attach(createButton, 1, 2, 1, 1)
-        grid.attach(cancelButton, 2, 2, 1, 1)
+        # Description Label
+        description = Gtk.Label("Description")
+        workspace.set_justify(Gtk.Justification.RIGHT)
+        descriptionBox.pack_start(description, True, True, 5)
 
-    def on_open_clicked(self, button):
-        print("New Project was clicked")
+        # Description Entry Field
+        self.entry = Gtk.Entry()
+        self.entry.set_text("Description")
+        descriptionBox.pack_start(self.entry, True, True, 5)
 
-    def on_close_clicked(self, button):
-        print("Closing application")
+        # Create Button
+        createButton = Gtk.Button.new_with_label("Create")
+        createButton.connect("clicked", self.CreateButton_clicked)
+        buttonBox.pack_start(createButton, True, True, 5)
+
+        # Cancel Button
+        cancelButton = Gtk.Button.new_with_label("Cancel")
+        cancelButton.connect("clicked", self.CancelButton_clicked)
+        buttonBox.pack_start(cancelButton, True, True, 5)
+
+
+    # Create Button 
+    def CreateButton_clicked(self, createButton):
+        print("Create")
+        self.destroy()
+
+    # Cancel Button
+    def CancelButton_clicked(self, cancelButton):
+        print("Cancel")
         self.destroy()

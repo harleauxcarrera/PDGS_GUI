@@ -3,11 +3,11 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
 
 import createProject as createProjectWindow
-import workspaceLauncher as switchWorkspaceWindow
-import projectImport as importProjectWindow
+import switchWorkspace as switchWorkspaceWindow
+import importProject as importProjectWindow
 import exportProject as exportProjectWindow
-import dissectorScript as generateDissectorScriptWindow
-import views as organizeViewsWindow
+import generateDissectorScript as generateDissectorScriptWindow
+import organizeViews as organizeViewsWindow
 import openPCAP as openPCAPWindow
 
 class MainWindow(Gtk.Window):
@@ -15,66 +15,78 @@ class MainWindow(Gtk.Window):
 	def __init__(self):
 		Gtk.Window.__init__(self, title="Protocol Dissector Generator System")
 
-		# Box
-		box = Gtk.Box(spacing = 5)
+		# Main Box
+		box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL, spacing = 5)
 		self.add(box)
+
+		#LabelBox
+		labelBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
+		labelBox.set_homogeneous(False)
+
+		#ButtonsBox
+		buttonBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
+		buttonBox.set_homogeneous(False)
+
+		box.pack_start(labelBox, True, True, 5)
+		box.pack_start(buttonBox, True, True, 5)
 
 		# Label
 		PDGSLabel = Gtk.Label()
-		PDGSLabel.set_markup("<span color = 'orange'><b><big>	   Protocol Dissector Generator System</big></b></span>")
-		box.pack_start(PDGSLabel, True, True, 0)
+		PDGSLabel.set_markup("<span color = 'orange'><b><big>Protocol Dissector Generator System</big></b></span>")
+		PDGSLabel.set_justify(Gtk.Justification.LEFT)
+		labelBox.pack_start(PDGSLabel, True, True, 0)
 
 		#Create Project Button
 		CreateProjectButton = Gtk.Button(label="Create Project")
 		CreateProjectButton.connect("clicked", self.CreateProjectButton_clicked)
-		box.pack_start(CreateProjectButton, True, True, 0)
+		buttonBox.pack_start(CreateProjectButton, True, True, 5)
 
 		#Save Project Button
 		SaveProjectButton = Gtk.Button(label="Save Project")
 		SaveProjectButton.connect("clicked", self.SaveProjectButton_clicked)
-		box.pack_start(SaveProjectButton, True, True, 0)
+		buttonBox.pack_start(SaveProjectButton, True, True, 0)
 
 		#Close Project Button
 		CloseProjectButton = Gtk.Button(label="Close Project")
 		CloseProjectButton.connect("clicked", self.CloseProjectButton_clicked)
-		box.pack_start(CloseProjectButton, True, True, 0)
+		buttonBox.pack_start(CloseProjectButton, True, True, 0)
 
 		#Switch Workspace Button
 		SwitchWorkspaceButton = Gtk.Button(label="Switch Workspace")
 		SwitchWorkspaceButton.connect("clicked", self.SwitchWorkspaceButton_clicked)
-		box.pack_start(SwitchWorkspaceButton, True, True, 0)
+		buttonBox.pack_start(SwitchWorkspaceButton, True, True, 0)
 
 		#Import Project Button
 		ImportProjectButton = Gtk.Button(label="Import Project")
 		ImportProjectButton.connect("clicked", self.ImportProjectButton_clicked)
-		box.pack_start(ImportProjectButton, True, True, 0)
+		buttonBox.pack_start(ImportProjectButton, True, True, 0)
 
 		#Export Project Button
 		ExportProjectButton = Gtk.Button(label="Export Project")
 		ExportProjectButton.connect("clicked", self.ExportProjectButton_clicked)
-		box.pack_start(ExportProjectButton, True, True, 0)
+		buttonBox.pack_start(ExportProjectButton, True, True, 0)
 
 		#Generate Dissector Script Button
 		GenerateDissectorScriptButton = Gtk.Button(label="Generate Dissector Script")
 		GenerateDissectorScriptButton.connect("clicked", self.GenerateDissectorScriptButton_clicked)
-		box.pack_start(GenerateDissectorScriptButton, True, True, 0)
+		buttonBox.pack_start(GenerateDissectorScriptButton, True, True, 0)
 
 		#Organize Views Button
 		OrganizeViewsButton = Gtk.Button(label="Organize Views")
 		OrganizeViewsButton.connect("clicked", self.OrganizeViewsButton_clicked)
-		box.pack_start(OrganizeViewsButton, True, True, 0)
+		buttonBox.pack_start(OrganizeViewsButton, True, True, 0)
 
 		#Open PCAP Button
 		OpenPCAPButton = Gtk.Button(label="Open PCAP")
-		OrganizeViewsButton.connect("clicked", self.OpenPCAPButton_clicked)
-		box.pack_start(OpenPCAPButton, True, True, 0)
+		OpenPCAPButton.connect("clicked", self.OpenPCAPButton_clicked)
+		buttonBox.pack_start(OpenPCAPButton, True, True, 0)
 
 
 	#User clicks CreateProjectButton
 	def CreateProjectButton_clicked(self, button):
 		print("Create Project")
 		#button action
-		win = createProjectWindow.GridWindow()
+		win = createProjectWindow.CreateProject()
 		win.connect("destroy", Gtk.main_quit)
 		win.show_all()
 		Gtk.main()
@@ -91,7 +103,7 @@ class MainWindow(Gtk.Window):
 	def SwitchWorkspaceButton_clicked(self, button):
 		print("Switch Workspace")
     	#button action
-    	win = switchWorkspaceWindow.PathChooserWindow()
+    	win = switchWorkspaceWindow.SwitchWorkspace()
     	win.connect("destroy", Gtk.main_quit)
     	win.show_all()
     	Gtk.main()
@@ -100,7 +112,7 @@ class MainWindow(Gtk.Window):
 	def ImportProjectButton_clicked(self, button):
 		print("Import Project")
 		#button action
-		win = importProjectWindow.ProjectImportWindow()
+		win = importProjectWindow.ImportProject()
 		win.show_all()
 		Gtk.main()
 
@@ -108,7 +120,7 @@ class MainWindow(Gtk.Window):
 	def ExportProjectButton_clicked(self, button):
 		print("Export Project")
 		#button action
-		win = exportProjectWindow.exportProjectWindow()
+		win = exportProjectWindow.ExportProject()
 		win.show_all()
 		Gtk.main()
 
@@ -116,7 +128,7 @@ class MainWindow(Gtk.Window):
 	def GenerateDissectorScriptButton_clicked(self, button):
 		print("Generate Dissector Script")
 		#button action
-		win = generateDissectorScriptWindow.DissectorScriptWindow()
+		win = generateDissectorScriptWindow.GenerateDissectorScript()
 		win.show_all()
 		Gtk.main()
 
@@ -124,7 +136,7 @@ class MainWindow(Gtk.Window):
 	def OrganizeViewsButton_clicked(self, button):
 		print("Organize Views")
 		#button action
-		win = organizeViewsWindow.viewsWindow()
+		win = organizeViewsWindow.OrganizeViews()
 		win.connect("destroy", Gtk.main_quit)
 		win.show_all()
 		Gtk.main()
@@ -133,7 +145,7 @@ class MainWindow(Gtk.Window):
 	def OpenPCAPButton_clicked(self, button):
 		print("Open PCAP")
 		#button action
-		min = openPCAPWindow.OpenPCAPWindow()
+		win = openPCAPWindow.OpenPCAP()
 		win.connect("destroy", Gtk.main_quit)
 		win.show_all()
 		Gtk.main()
