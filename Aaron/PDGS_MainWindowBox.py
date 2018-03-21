@@ -7,7 +7,7 @@ import workspaceLauncher as switchWorkspaceWindow
 import projectImport as importProjectWindow
 import exportProject as exportProjectWindow
 import dissectorScript as generateDissectorScriptWindow
-import views as organizeViewsWindows
+import views as organizeViewsWindow
 import openPCAP as openPCAPWindow
 
 class MainWindow(Gtk.Window):
@@ -124,7 +124,7 @@ class MainWindow(Gtk.Window):
 	def OrganizeViewsButton_clicked(self, button):
 		print("Organize Views")
 		#button action
-		win = organizeViewsWindows.viewsWindow()
+		win = organizeViewsWindow.viewsWindow()
 		win.connect("destroy", Gtk.main_quit)
 		win.show_all()
 		Gtk.main()
