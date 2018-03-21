@@ -37,32 +37,32 @@ class MainWindow(Gtk.Window):
 		labelBox.pack_start(PDGSLabel, True, True, 0)
 
 		#Create Project Button
-		CreateProjectButton = Gtk.Button(label="Create Project")
+		CreateProjectButton = Gtk.Button(label = "Create Project")
 		CreateProjectButton.connect("clicked", self.CreateProjectButton_clicked)
 		buttonBox.pack_start(CreateProjectButton, True, True, 5)
 
 		#Save Project Button
-		SaveProjectButton = Gtk.Button(label="Save Project")
+		SaveProjectButton = Gtk.Button(label = "Save Project")
 		SaveProjectButton.connect("clicked", self.SaveProjectButton_clicked)
 		buttonBox.pack_start(SaveProjectButton, True, True, 0)
 
 		#Close Project Button
-		CloseProjectButton = Gtk.Button(label="Close Project")
+		CloseProjectButton = Gtk.Button(label = "Close Project")
 		CloseProjectButton.connect("clicked", self.CloseProjectButton_clicked)
 		buttonBox.pack_start(CloseProjectButton, True, True, 0)
 
 		#Switch Workspace Button
-		SwitchWorkspaceButton = Gtk.Button(label="Switch Workspace")
+		SwitchWorkspaceButton = Gtk.Button(label = "Switch Workspace")
 		SwitchWorkspaceButton.connect("clicked", self.SwitchWorkspaceButton_clicked)
 		buttonBox.pack_start(SwitchWorkspaceButton, True, True, 0)
 
 		#Import Project Button
-		ImportProjectButton = Gtk.Button(label="Import Project")
+		ImportProjectButton = Gtk.Button(label = "Import Project")
 		ImportProjectButton.connect("clicked", self.ImportProjectButton_clicked)
 		buttonBox.pack_start(ImportProjectButton, True, True, 0)
 
 		#Export Project Button
-		ExportProjectButton = Gtk.Button(label="Export Project")
+		ExportProjectButton = Gtk.Button(label = "Export Project")
 		ExportProjectButton.connect("clicked", self.ExportProjectButton_clicked)
 		buttonBox.pack_start(ExportProjectButton, True, True, 0)
 
@@ -102,17 +102,18 @@ class MainWindow(Gtk.Window):
 	#User clicks SwitchWorkspaceButton
 	def SwitchWorkspaceButton_clicked(self, button):
 		print("Switch Workspace")
-    	#button action
-    	win = switchWorkspaceWindow.SwitchWorkspace()
-    	win.connect("destroy", Gtk.main_quit)
-    	win.show_all()
-    	Gtk.main()
+		#button action
+		win = switchWorkspaceWindow.SwitchWorkspace()
+		win.connect("destroy", Gtk.main_quit)
+		win.show_all()
+		Gtk.main()
 
 	#User clicks ImportProjectButton
 	def ImportProjectButton_clicked(self, button):
 		print("Import Project")
 		#button action
 		win = importProjectWindow.ImportProject()
+		win.connect("destroy", Gtk.main_quit)
 		win.show_all()
 		Gtk.main()
 
@@ -121,6 +122,7 @@ class MainWindow(Gtk.Window):
 		print("Export Project")
 		#button action
 		win = exportProjectWindow.ExportProject()
+		win.connect("destroy", Gtk.main_quit)
 		win.show_all()
 		Gtk.main()
 
@@ -129,6 +131,7 @@ class MainWindow(Gtk.Window):
 		print("Generate Dissector Script")
 		#button action
 		win = generateDissectorScriptWindow.GenerateDissectorScript()
+		win.connect("destroy", Gtk.main_quit)
 		win.show_all()
 		Gtk.main()
 
