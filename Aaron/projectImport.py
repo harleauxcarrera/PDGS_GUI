@@ -2,22 +2,22 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-class PathChooserWindow(Gtk.Window):
+class ProjectImportWindow(Gtk.Window):
 
     def __init__(self):
-        Gtk.Window.__init__(self, title="Workspace Launcher")
+        Gtk.Window.__init__(self, title="Import Project")
 
         grid = Gtk.Grid()
         self.add(grid)
         self.set_default_size(300,50)
 
-        desc = Gtk.Label("Select a directory as workspace.")
-        name = Gtk.Label("Workspace:  ")
+        desc = Gtk.Label("Import a protject into current workspace.")
+        name = Gtk.Label("Project:  ")
 
         button2 = Gtk.Button("Browse")
-        button2.connect("clicked", self.on_folder_clicked)
+        button2.connect("clicked", self.on_file_clicked)
 
-        createButton = Gtk.Button.new_with_mnemonic("Launch")
+        createButton = Gtk.Button.new_with_mnemonic("Import")
         createButton.connect("clicked", self.on_open_clicked)
 
         cancelButton = Gtk.Button.new_with_mnemonic("_Cancel")
@@ -46,22 +46,22 @@ class PathChooserWindow(Gtk.Window):
         filter_any.add_pattern("*")
         dialog.add_filter(filter_any)
 
-    def on_folder_clicked(self, widget):
-        dialog = Gtk.FileChooserDialog("Please choose a folder", self,
-            Gtk.FileChooserAction.SELECT_FOLDER,
+    def on_file_clicked(self, widget):
+        dialog = Gtk.FileChooserDialog("Please choose a file", self,
+            Gtk.FileChooserAction.OPEN,
             (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-             "Select", Gtk.ResponseType.OK))
-        dialog.set_default_size(800, 400)
+             Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
+
+        self.add_filters(dialog)
 
         response = dialog.run()
         if response == Gtk.ResponseType.OK:
-            print("Select clicked")
-            print("Folder selected: " + dialog.get_filename())
+            print("Open clicked")
+            print("File selected: " + dialog.get_filename())
         elif response == Gtk.ResponseType.CANCEL:
             print("Cancel clicked")
 
         dialog.destroy()
-
 
     def on_open_clicked(self, button):
         print("Workspace was created")
@@ -69,5 +69,3 @@ class PathChooserWindow(Gtk.Window):
     def on_close_clicked(self, button):
         print("Closing application")
         self.destroy()
-
-

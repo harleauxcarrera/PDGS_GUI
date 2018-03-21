@@ -1,8 +1,14 @@
 import gi
-import createProject as createProjectWindow
-
 gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk
+
+import createProject as createProjectWindow
+import workspaceLauncher as switchWorkspaceWindow
+import projectImport as importProjectWindow
+import exportProject as exportProjectWindow
+import dissectorScript as generateDissectorScriptWindow
+import views as organizeViewsWindows
+import openPCAP as openPCAPWindow
 
 class MainWindow(Gtk.Window):
 
@@ -10,97 +16,127 @@ class MainWindow(Gtk.Window):
 		Gtk.Window.__init__(self, title="Protocol Dissector Generator System")
 
 		# Box
-		self.box = Gtk.Box(spacing = 5)
-		self.add(self.box)
+		box = Gtk.Box(spacing = 5)
+		self.add(box)
 
 		# Label
-		self.PDGSTitle = Gtk.Label(label = "Protocol Dissector Generator System")
-		self.box.pack_start(self.PDGSTitle, True, True, 0)
+		PDGSLabel = Gtk.Label()
+		PDGSLabel.set_markup("<span color = 'orange'><b><big>	   Protocol Dissector Generator System</big></b></span>")
+		box.pack_start(PDGSLabel, True, True, 0)
 
 		#Create Project Button
-		self.CreateProjectButton = Gtk.Button(label="Create Project")
-		self.CreateProjectButton.connect("clicked", self.CreateProjectButton_clicked)
-		self.box.pack_start(self.CreateProjectButton, True, True, 0)
+		CreateProjectButton = Gtk.Button(label="Create Project")
+		CreateProjectButton.connect("clicked", self.CreateProjectButton_clicked)
+		box.pack_start(CreateProjectButton, True, True, 0)
 
 		#Save Project Button
-		self.SaveProjectButton = Gtk.Button(label="Save Project")
-		self.SaveProjectButton.connect("clicked", self.SaveProjectButton_clicked)
-		self.box.pack_start(self.SaveProjectButton, True, True, 0)
+		SaveProjectButton = Gtk.Button(label="Save Project")
+		SaveProjectButton.connect("clicked", self.SaveProjectButton_clicked)
+		box.pack_start(SaveProjectButton, True, True, 0)
 
 		#Close Project Button
-		self.CloseProjectButton = Gtk.Button(label="Close Project")
-		self.CloseProjectButton.connect("clicked", self.CloseProjectButton_clicked)
-		self.box.pack_start(self.CloseProjectButton, True, True, 0)
+		CloseProjectButton = Gtk.Button(label="Close Project")
+		CloseProjectButton.connect("clicked", self.CloseProjectButton_clicked)
+		box.pack_start(CloseProjectButton, True, True, 0)
 
 		#Switch Workspace Button
-		self.SwitchWorkspaceButton = Gtk.Button(label="Switch Workspace")
-		self.SwitchWorkspaceButton.connect("clicked", self.SwitchWorkspaceButton_clicked)
-		self.box.pack_start(self.SwitchWorkspaceButton, True, True, 0)
+		SwitchWorkspaceButton = Gtk.Button(label="Switch Workspace")
+		SwitchWorkspaceButton.connect("clicked", self.SwitchWorkspaceButton_clicked)
+		box.pack_start(SwitchWorkspaceButton, True, True, 0)
 
 		#Import Project Button
-		self.ImportProjectButton = Gtk.Button(label="Import Project")
-		self.ImportProjectButton.connect("clicked", self.ImportProjectButton_clicked)
-		self.box.pack_start(self.ImportProjectButton, True, True, 0)
+		ImportProjectButton = Gtk.Button(label="Import Project")
+		ImportProjectButton.connect("clicked", self.ImportProjectButton_clicked)
+		box.pack_start(ImportProjectButton, True, True, 0)
 
 		#Export Project Button
-		self.ExportProjectButton = Gtk.Button(label="Export Project")
-		self.ExportProjectButton.connect("clicked", self.ExportProjectButton_clicked)
-		self.box.pack_start(self.ExportProjectButton, True, True, 0)
+		ExportProjectButton = Gtk.Button(label="Export Project")
+		ExportProjectButton.connect("clicked", self.ExportProjectButton_clicked)
+		box.pack_start(ExportProjectButton, True, True, 0)
 
 		#Generate Dissector Script Button
-		self.GenerateDissectorScriptButton = Gtk.Button(label="Generate Dissector Script")
-		self.GenerateDissectorScriptButton.connect("clicked", self.GenerateDissectorScriptButton_clicked)
-		self.box.pack_start(self.GenerateDissectorScriptButton, True, True, 0)
+		GenerateDissectorScriptButton = Gtk.Button(label="Generate Dissector Script")
+		GenerateDissectorScriptButton.connect("clicked", self.GenerateDissectorScriptButton_clicked)
+		box.pack_start(GenerateDissectorScriptButton, True, True, 0)
 
 		#Organize Views Button
-		self.OrganizeViewsButton = Gtk.Button(label="Organize Views")
-		self.OrganizeViewsButton.connect("clicked", self.OrganizeViewsButton_clicked)
-		self.box.pack_start(self.OrganizeViewsButton, True, True, 0)
+		OrganizeViewsButton = Gtk.Button(label="Organize Views")
+		OrganizeViewsButton.connect("clicked", self.OrganizeViewsButton_clicked)
+		box.pack_start(OrganizeViewsButton, True, True, 0)
 
 		#Open PCAP Button
-		self.OpenPCAPButton = Gtk.Button(label="Open PCAP")
-		self.OrganizeViewsButton.connect("clicked", self.OpenPCAPButton_clicked)
-		self.box.pack_start(self.OpenPCAPButton, True, True, 0)
+		OpenPCAPButton = Gtk.Button(label="Open PCAP")
+		OrganizeViewsButton.connect("clicked", self.OpenPCAPButton_clicked)
+		box.pack_start(OpenPCAPButton, True, True, 0)
 
 
 	#User clicks CreateProjectButton
 	def CreateProjectButton_clicked(self, button):
 		print("Create Project")
-		win2 = createProjectWindow.GridWindow()
-    	win2.connect("destroy", self.destroy)
-    	win2.show_all()
+		#button action
+		win = createProjectWindow.GridWindow()
+		win.connect("destroy", Gtk.main_quit)
+		win.show_all()
+		Gtk.main()
 
 	#User clicks SaveProjectButton
-	def SaveProjectButton_clicked(self, widget):
+	def SaveProjectButton_clicked(self, button):
 		print("Save Project")
 
 	#User clicks CloseProjectButton
-	def CloseProjectButton_clicked(self, widget):
+	def CloseProjectButton_clicked(self, button):
 		print("Close Project")
 
 	#User clicks SwitchWorkspaceButton
-	def SwitchWorkspaceButton_clicked(self, widget):
+	def SwitchWorkspaceButton_clicked(self, button):
 		print("Switch Workspace")
+    	#button action
+    	win = switchWorkspaceWindow.PathChooserWindow()
+    	win.connect("destroy", Gtk.main_quit)
+    	win.show_all()
+    	Gtk.main()
 
 	#User clicks ImportProjectButton
-	def ImportProjectButton_clicked(self, widget):
+	def ImportProjectButton_clicked(self, button):
 		print("Import Project")
+		#button action
+		win = importProjectWindow.ProjectImportWindow()
+		win.show_all()
+		Gtk.main()
 
 	#User clicks ExportProjectButton
-	def ExportProjectButton_clicked(self, widget):
+	def ExportProjectButton_clicked(self, button):
 		print("Export Project")
+		#button action
+		win = exportProjectWindow.exportProjectWindow()
+		win.show_all()
+		Gtk.main()
 
 	#User clicks GenerateDissectorScriptButton
-	def GenerateDissectorScriptButton_clicked(self, widget):
+	def GenerateDissectorScriptButton_clicked(self, button):
 		print("Generate Dissector Script")
+		#button action
+		win = generateDissectorScriptWindow.DissectorScriptWindow()
+		win.show_all()
+		Gtk.main()
 
 	#User clicks Organize Views Button
-	def OrganizeViewsButton_clicked(self, widget):
+	def OrganizeViewsButton_clicked(self, button):
 		print("Organize Views")
+		#button action
+		win = organizeViewsWindows.viewsWindow()
+		win.connect("destroy", Gtk.main_quit)
+		win.show_all()
+		Gtk.main()
 
 	#User clicks Organize Views Button
-	def OpenPCAPButton_clicked(self, widget):
+	def OpenPCAPButton_clicked(self, button):
 		print("Open PCAP")
+		#button action
+		min = openPCAPWindow.OpenPCAPWindow()
+		win.connect("destroy", Gtk.main_quit)
+		win.show_all()
+		Gtk.main()
 
 window = MainWindow()
 window.connect("delete-event", Gtk.main_quit)

@@ -69,5 +69,3 @@ class PathChooserWindow(Gtk.Window):
     def on_close_clicked(self, button):
         print("Closing application")
         self.destroy()
-
-
