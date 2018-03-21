@@ -12,10 +12,10 @@ class DragDropWindow(Gtk.Window):
     def __init__(self):
         Gtk.Window.__init__(self, title="Drag and Drop Demo")
 
-        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
         self.add(vbox)
 
-        hbox = Gtk.Box(spacing=12)
+        hbox = Gtk.Box(spacing=10)
         vbox.pack_start(hbox, True, True, 0)
 
         self.iconview = DragSourceIconView()
@@ -24,7 +24,7 @@ class DragDropWindow(Gtk.Window):
         hbox.pack_start(self.iconview, True, True, 0)
         hbox.pack_start(self.drop_area, True, True, 0)
 
-        button_box = Gtk.Box(spacing=6)
+        button_box = Gtk.Box(spacing=1)
         vbox.pack_start(button_box, True, False, 0)
 
         image_button = Gtk.RadioButton.new_with_label_from_widget(None,
