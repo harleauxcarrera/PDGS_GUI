@@ -49,8 +49,8 @@ class MainWindow(Gtk.Window):
 		packetPreviewAreaBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
 		packetPreviewAreaBox.set_homogeneous(False)
 
-		box.pack_start(labelBox, True, True, 5)
-		box.pack_start(buttonBox, True, True, 5)
+		box.pack_start(labelBox, True, False, 0)
+		box.pack_start(buttonBox, True, False, 5)
 		box.pack_start(projectDissectorBox, True, True, 5)
 		box.pack_start(packetPreviewAreaBox, True, True, 5)
 
@@ -106,10 +106,7 @@ class MainWindow(Gtk.Window):
 		buttonBox.pack_start(OpenPCAPButton, True, True, 0)
 
 
-
-
-
-		#Project Navigator
+		#************************************************Project Navigator Area**************************************************
 		store = Gtk.TreeStore(str)
 
 		row1 = store.append(None, ['Project1        '])
@@ -121,19 +118,52 @@ class MainWindow(Gtk.Window):
 		store.append(row2, ['dissector2'])
 		store.append(row2, ['pcap2'])
 
-		treeview = Gtk.TreeView(store)
-		tvcolumn = Gtk.TreeViewColumn('Project')
-		treeview.append_column(tvcolumn)
+		treeView = Gtk.TreeView(store)
+		treeViewColumn = Gtk.TreeViewColumn('Project')
+		treeView.append_column(treeViewColumn)
 
 		cell = Gtk.CellRendererText()
-		tvcolumn.pack_start(cell, True)
-		tvcolumn.add_attribute(cell, 'text', 0)
-		projectNavigatorBox.add(treeview)
+		treeViewColumn.pack_start(cell, True)
+		treeViewColumn.add_attribute(cell, 'text', 0)
+		projectNavigatorBox.add(treeView)
+
+
+
+		#***********************************************Dissector Builder Area**************************************************
 
 
 
 
 
+
+		#*************************************************Packet Preview Area***************************************************
+		
+		previewAreas = Gtk.Notebook()
+		packetPreviewAreaBox.add(previewAreas)
+
+		packetStreamBox = Gtk.Box(spacing = 5)
+		packetStreamBox.set_homogeneous(False)
+		packetStreamBox.set_border_width(10)
+		packetStreamBox.add(Gtk.Label('Test'))
+		previewAreas.append_page(packetStreamBox, Gtk.Label('Packet Stream Area View'))
+
+		dissectedStreamBox = Gtk.Box(spacing = 5)
+		dissectedStreamBox.set_homogeneous(False)
+		dissectedStreamBox.set_border_width(10)
+		dissectedStreamBox.add(Gtk.Label('Test'))
+		previewAreas.append_page(dissectedStreamBox, Gtk.Label('Dissected Stream Area View'))
+
+		rawDataBox = Gtk.Box(spacing = 5)
+		rawDataBox.set_homogeneous(False)
+		rawDataBox.set_border_width(10)
+		rawDataBox.add(Gtk.Label('Test'))
+		previewAreas.append_page(rawDataBox, Gtk.Label('Raw Data Area'))
+
+		consoleBox = Gtk.Box(spacing = 5)
+		consoleBox.set_homogeneous(False)
+		consoleBox.set_border_width(10)
+		consoleBox.add(Gtk.Label('Test'))
+		previewAreas.append_page(consoleBox, Gtk.Label('Console Area'))
 
 
 	#User clicks CreateProjectButton
