@@ -51,6 +51,14 @@ class GridWindow(Gtk.Window):
         req = Gtk.Label("Required:  ")
         requiredBox = Gtk.CheckButton()
 
+
+        #OK and CANCEL BUTTONS
+        ok_button = Gtk.Button.new_with_mnemonic("OK")
+        ok_button.connect("clicked", self.on_open_clicked)
+
+        cancel_button = Gtk.Button.new_with_mnemonic("Cancel")
+        cancel_button.connect("clicked", self.on_close_clicked)
+
         #Add Properties and inputs to grid#
         #attach(addedWidget, leftAttach, topAttach, widthRow, heighColumn)#
         #attach_next_to(addedWidget, attachedToSibling, sideofSiblingToAttackTo, width, height)#
@@ -80,6 +88,20 @@ class GridWindow(Gtk.Window):
 
         grid.attach_next_to(req,vconst, Gtk.PositionType.BOTTOM, 1,1 )
         grid.attach(requiredBox, 1, 8, 4, 1)
+
+        #attach(addedWidget, leftAttach, topAttach, widthRow, heighColumn)#
+        #attach_next_to(addedWidget, attachedToSibling, sideofSiblingToAttackTo, width, height)#
+
+        grid.attach_next_to(ok_button,requiredBox, Gtk.PositionType.BOTTOM, 1, 1 )
+        grid.attach_next_to(cancel_button,ok_button, Gtk.PositionType.RIGHT, 1, 1 )
+
+    def on_open_clicked(self, button):
+        print("New field was created")
+        self.destroy()
+
+    def on_close_clicked(self, button):
+        print("Closing application")
+        self.destroy()
 
 
 

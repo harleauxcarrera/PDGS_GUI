@@ -11,9 +11,9 @@ class CellRendererTextWindow(Gtk.Window):
 
         #APPEND REFERENCE LIST VALUES HERE#
         self.liststore = Gtk.ListStore(str, str)
-        self.liststore.append(["Fedora", "http://fedoraproject.org/"])
-        self.liststore.append(["Slackware", "http://www.slackware.com/"])
-        self.liststore.append(["Sidux", "http://sidux.com/"])
+        self.liststore.append(["X", "X"])
+        self.liststore.append(["Y", "Y"])
+        self.liststore.append(["Y", "Y"])
 
         treeview = Gtk.TreeView(model=self.liststore)
 
@@ -31,7 +31,7 @@ class CellRendererTextWindow(Gtk.Window):
         renderer_editabletext.connect("edited", self.text_edited)
 
         self.add(treeview)
-    
+
 
 
 
