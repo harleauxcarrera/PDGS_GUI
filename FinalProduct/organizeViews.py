@@ -53,12 +53,12 @@ class OrganizeViews(Gtk.Window):
         column1Box.pack_start(emptyLabel, True, True, 5)
 
         # Hide Label
-        hideLabel = Gtk.Label("Show")
+        hideLabel = Gtk.Label("Hide")
         hideLabel.set_justify(Gtk.Justification.CENTER)
         column2Box.pack_start(hideLabel, True, True, 5)
 
         # Show Label
-        showLabel = Gtk.Label("Hide")
+        showLabel = Gtk.Label("Show")
         showLabel.set_justify(Gtk.Justification.CENTER)
         column3Box.pack_start(showLabel, True, True, 5)
 
@@ -188,7 +188,7 @@ class OrganizeViews(Gtk.Window):
         buttonBox.pack_start(defaultButton, True, True, 5)
 
         # Confirm Button
-        confirmButton = Gtk.Button(label = "Confirm")
+        confirmButton = Gtk.Button(label = "Open")
         confirmButton.connect("clicked", self.confirm_clicked)
         buttonBox.pack_start(confirmButton, False, False, 5)
 
