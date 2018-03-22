@@ -30,7 +30,18 @@ class CellRendererTextWindow(Gtk.Window):
 
         renderer_editabletext.connect("edited", self.text_edited)
 
-        self.add(treeview)
+        box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
+        self.add(box)
+        box.add(treeview)
+        
+        add_button = Gtk.Button.new_with_mnemonic("+")
+        add_button.connect("clicked", self.on_add_clicked)
+        box.add(add_button)
+
+
+    def on_add_clicked(self, button):
+        print("New field was created")
+        self.destroy()
 
 
 
