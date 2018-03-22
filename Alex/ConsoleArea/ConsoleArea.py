@@ -97,8 +97,3 @@ window = ConsoleAreaWindow()
 window.connect("delete-event", Gtk.main_quit)
 window.show_all()
 Gtk.main()
-
-
-store = Gtk.ListStore(str, str, str, str, str, str)
-
-treeiter = store.append(["Number", "Time", "Source", "Destination", "Length", "Info"])
