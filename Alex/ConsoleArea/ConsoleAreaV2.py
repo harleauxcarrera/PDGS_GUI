@@ -41,7 +41,7 @@ class ConsoleAreaWindow(Gtk.Window):
         # Packet Stream Area View
         self.page1 = Gtk.Box()
         self.page1.set_border_width(10)
-        self.page1.add(Gtk.Image.new_from_file('PacketCapture.png'))
+
         packetCaptureLabel = Gtk.Label()
         packetCaptureLabel.set_markup("<b>Packet Stream Area View</b>")
         self.notebook.append_page(self.page1, packetCaptureLabel)
@@ -49,7 +49,7 @@ class ConsoleAreaWindow(Gtk.Window):
         # Dissected Stream Area View
         self.page2 = Gtk.Box()
         self.page2.set_border_width(10)
-        self.page2.add(Gtk.Image.new_from_file('DissectedStream.png'))
+
         dissectedStreamLabel = Gtk.Label()
         dissectedStreamLabel.set_markup("<b>Dissected Stream Area View</b>")
         self.notebook.append_page(self.page2, dissectedStreamLabel)
@@ -57,7 +57,7 @@ class ConsoleAreaWindow(Gtk.Window):
         # Raw Data Area View
         self.page3 = Gtk.Box()
         self.page3.set_border_width(10)
-        self.page3.add(Gtk.Image.new_from_file('RawData.png'))
+        
         rawDataLabel = Gtk.Label()
         rawDataLabel.set_markup("<b>Raw Data Area View</b>")
         self.notebook.append_page(self.page3, rawDataLabel)
