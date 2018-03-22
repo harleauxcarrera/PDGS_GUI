@@ -6,24 +6,21 @@ import refListField as refListField
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-class BuilderWindow(Gtk.Window):
+class BuilderWindow(Gtk.Box):
 	
 	def __init__(self):
-		Gtk.Window.__init__(self, title="Builder Area")
+		Gtk.Box.__init__(self, spacing=10)
 
 		self.set_border_width(10)
 
-		self.set_default_size(800,400)
-
-		mainBuilderBox = Gtk.Box(spacing=10)
-		self.add(mainBuilderBox)
+		#mainBuilderBox = Gtk.Box(spacing=10)
 
 		CanvasLabel = Gtk.Label("Builder Canvas")
 
-		mainBuilderBox.pack_start(CanvasLabel, True, False, 0)
+		self.pack_start(CanvasLabel, True, False, 0)
 
 		optionBox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
-		mainBuilderBox.pack_start(optionBox, False, False, 0)
+		self.pack_start(optionBox, False, False, 0)
 
 		optionsStack = Gtk.Stack()
 		optionsStack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT_RIGHT)
@@ -146,7 +143,9 @@ class BuilderWindow(Gtk.Window):
 		win2.show_all()
 		Gtk.main()
 
-win = BuilderWindow()
+win = Gtk.Window()
+buildBox = BuilderWindow()
+win.add(buildBox)
 win.connect("delete-event", Gtk.main_quit)
 win.show_all()
 Gtk.main()
