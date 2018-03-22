@@ -68,12 +68,12 @@ class OrganizeViews(Gtk.Window):
         projectLabel.set_justify(Gtk.Justification.RIGHT)
         column1Box.pack_start(projectLabel, True, True, 5)
 
-        # Project Navigation Hide Radio Button 
+        # Project Navigation Show Radio Button 
         projectShowButton = Gtk.RadioButton.new_with_label_from_widget(None, "")
         projectShowButton.connect("toggled", self.project_nav_toggled, "Hide")
         column2Box.pack_start(projectShowButton, False, False, 5)
 
-        # Project Navigation Show Radio Button
+        # Project Navigation Hide Radio Button
         projectHideButton = Gtk.RadioButton.new_from_widget(projectShowButton)
         projectHideButton.set_label("")
         projectHideButton.connect("toggled", self.project_nav_toggled, "Show")
@@ -85,12 +85,12 @@ class OrganizeViews(Gtk.Window):
         dissectorBuildingLabel.set_justify(Gtk.Justification.RIGHT)
         column1Box.pack_start(dissectorBuildingLabel, True, True, 5)
 
-        # Dissector Building Area Hide Radio Button 
+        # Dissector Building Area Show Radio Button 
         dissectorBuildingShowButton = Gtk.RadioButton.new_with_label_from_widget(None, "")
         dissectorBuildingShowButton.connect("toggled", self.dissector_builder_toggled, "Hide")
         column2Box.pack_start(dissectorBuildingShowButton, False, False, 5)
 
-        # Dissector Building Area Show Radio Button
+        # Dissector Building Area Hide Radio Button
         dissectorBuildingHideButton = Gtk.RadioButton.new_from_widget(dissectorBuildingShowButton)
         dissectorBuildingHideButton.set_label("")
         dissectorBuildingHideButton.connect("toggled", self.dissector_builder_toggled, "Show")
@@ -102,12 +102,12 @@ class OrganizeViews(Gtk.Window):
         paletteLabel.set_justify(Gtk.Justification.RIGHT)
         column1Box.pack_start(paletteLabel, True, True, 5)
 
-        # Palette Hide Radio Button 
+        # Palette Show Radio Button 
         paletteShowButton = Gtk.RadioButton.new_with_label_from_widget(None, "")
         paletteShowButton.connect("toggled", self.palette_toggled, "Hide")
         column2Box.pack_start(paletteShowButton, False, False, 5)
 
-        # Palette Show Radio Button
+        # Palette Hide Radio Button
         paletteHideButton = Gtk.RadioButton.new_from_widget(paletteShowButton)
         paletteHideButton.set_label("")
         paletteHideButton.connect("toggled", self.palette_toggled, "Show")
@@ -119,12 +119,12 @@ class OrganizeViews(Gtk.Window):
         packetStreamLabel.set_justify(Gtk.Justification.RIGHT)
         column1Box.pack_start(packetStreamLabel, True, True, 5)
 
-        # Packet Stream Area Hide Radio Button
+        # Packet Stream Area Show Radio Button
         packetStreamShowButton = Gtk.RadioButton.new_with_label_from_widget(None, "")
         packetStreamShowButton.connect("toggled", self.packet_stream_toggled, "Hide")
         column2Box.pack_start(packetStreamShowButton, False, False, 5)
 
-        # Packet Stream Area Show Radio Button
+        # Packet Stream Area Hide Radio Button
         packetStreamHideButton = Gtk.RadioButton.new_from_widget(packetStreamShowButton)
         packetStreamHideButton.set_label("")
         packetStreamHideButton.connect("toggled", self.packet_stream_toggled, "Show")
@@ -136,12 +136,12 @@ class OrganizeViews(Gtk.Window):
         dissectedStreamLabel.set_justify(Gtk.Justification.RIGHT)
         column1Box.pack_start(dissectedStreamLabel, True, True, 5)
 
-        # Dissected Stream Area Hide Radio Button 
+        # Dissected Stream Area Show Radio Button 
         dissectedStreamShowButton = Gtk.RadioButton.new_with_label_from_widget(None, "")
         dissectedStreamShowButton.connect("toggled", self.dissected_stream_toggled, "Hide")
         column2Box.pack_start(dissectedStreamShowButton, False, False, 5)
 
-        # Dissected Stream Area Show Radio Button
+        # Dissected Stream Area Hide Radio Button
         dissectedStreamHideButton = Gtk.RadioButton.new_from_widget(dissectedStreamShowButton)
         dissectedStreamHideButton.set_label("")
         dissectedStreamHideButton.connect("toggled", self.dissected_stream_toggled, "Show")
@@ -153,12 +153,12 @@ class OrganizeViews(Gtk.Window):
         rawDataLabel.set_justify(Gtk.Justification.RIGHT)
         column1Box.pack_start(rawDataLabel, True, True, 5)
 
-         # Raw Data Area Hide Radio Button 
+         # Raw Data Area Show Radio Button 
         rawDataShowButton = Gtk.RadioButton.new_with_label_from_widget(None, "")
         rawDataShowButton.connect("toggled", self.raw_data_toggled, "Hide")
         column2Box.pack_start(rawDataShowButton, False, False, 5)
 
-        # Raw Data Area Show Radio Button
+        # Raw Data Area Hide Radio Button
         rawDataHideButton = Gtk.RadioButton.new_from_widget(rawDataShowButton)
         rawDataHideButton.set_label("")
         rawDataHideButton.connect("toggled", self.raw_data_toggled, "Show")
@@ -170,12 +170,12 @@ class OrganizeViews(Gtk.Window):
         consoleAreaLabel.set_justify(Gtk.Justification.RIGHT)
         column1Box.pack_start(consoleAreaLabel, True, True, 5)
 
-        # Console Area Hide Radio Button 
+        # Console Area Show Radio Button 
         consoleAreaShowButton = Gtk.RadioButton.new_with_label_from_widget(None, "")
         consoleAreaShowButton.connect("toggled", self.console_area_toggled, "Hide")
         column2Box.pack_start(consoleAreaShowButton, False, False, 5)
         
-        # Console Area Show Radio Button
+        # Console Area Hide Radio Button
         consoleAreaHideButton = Gtk.RadioButton.new_from_widget(consoleAreaShowButton)
         consoleAreaHideButton.set_label("")
         consoleAreaHideButton.connect("toggled", self.console_area_toggled, "Show")
