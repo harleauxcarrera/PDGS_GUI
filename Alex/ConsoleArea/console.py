@@ -127,7 +127,7 @@ class ConsoleAreaWindow(Gtk.Window):
 
         row3 = store.append(None, ['Queries'])
         store.append(row3, ['www.cnn.com: type A, Class IN'])
-        
+
         treeView = Gtk.TreeView(store)
         treeViewColumn = Gtk.TreeViewColumn('Project')
         treeView.append_column(treeViewColumn)
@@ -145,10 +145,65 @@ class ConsoleAreaWindow(Gtk.Window):
         # Raw Data Area View
         self.page3 = Gtk.Box()
         self.page3.set_border_width(10)
-        # self.page3.add(treeview)
+
+
+        #******************************
+
+        #THIS IS THE TREE VIEW COMPONENT SKELETON USED FOR DISPLAYING THE PACKET DATA #
+        self.liststore2 = Gtk.ListStore(str, str, str,str,str,str)
+        self.liststore2.append(["0000", "00CC","8E","9E","9E","get-response-SNMP2"])
+        self.liststore2.append(["0010", "00Cx","8C","7E","8E","get-response-SNMP2"])
+        self.liststore2.append(["0020", "00Cx","8F","8E","9E","get-response-SNMP2"])
+        self.liststore2.append(["0030", "00Cx","00","8E","8E","http_request_query"])
+        self.liststore2.append(["0040", "00Cx","8C","8E","00","http_request_query"])
+        self.liststore2.append(["0050", "1100Cx","CC","8F","8F","http_request_query"])
+        self.liststore2.append(["0060", "00Cx","EE","00","8F","http_request_query"])
+        treeview2 = Gtk.TreeView(model=self.liststore2)
+
+        number = Gtk.CellRendererText()
+        col1 = Gtk.TreeViewColumn("        ", number, text=0)
+        treeview2.append_column(col1)
+
+        time = Gtk.CellRendererText()
+        col2 = Gtk.TreeViewColumn("    ", time, text=1)
+        treeview2.append_column(col2)
+
+        source = Gtk.CellRendererText()
+        col3 = Gtk.TreeViewColumn("       ", source, text=2)
+        treeview2.append_column(col3)
+
+        dest = Gtk.CellRendererText()
+        col4 = Gtk.TreeViewColumn("    ", dest, text=3)
+        treeview2.append_column(col4)
+
+        protocol = Gtk.CellRendererText()
+        col5 = Gtk.TreeViewColumn("  ", protocol, text=4)
+        treeview2.append_column(col5)
+
+        description = Gtk.CellRendererText()
+        col6 = Gtk.TreeViewColumn("  ", description, text=5)
+        treeview2.append_column(col6)
+
+
+
+        self.page3.add(treeview2)
+
+
+
+
+
+
+        #******************************
+
+
+
         rawDataLabel = Gtk.Label()
         rawDataLabel.set_markup("<b>Raw Data Area View</b>")
         self.notebook.append_page(self.page3, rawDataLabel)
+
+
+
+
 
         # Console Area
         self.page4 = Gtk.Box()

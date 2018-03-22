@@ -127,7 +127,7 @@ class ConsoleAreaWindow(Gtk.Window):
 
         row3 = store.append(None, ['Queries'])
         store.append(row3, ['www.cnn.com: type A, Class IN'])
-        
+
         treeView = Gtk.TreeView(store)
         treeViewColumn = Gtk.TreeViewColumn('Project')
         treeView.append_column(treeViewColumn)
@@ -145,7 +145,41 @@ class ConsoleAreaWindow(Gtk.Window):
         # Raw Data Area View
         self.page3 = Gtk.Box()
         self.page3.set_border_width(10)
-        # self.page3.add(treeview)
+
+        #***********LIST COMPONENT***************
+    	store = Gtk.TreeStore(str)
+
+        row1 = store.append(None, ['User Datagram Protocol, SRC Port: Domain (53) , Dest Port: Dest (420)        '])
+        store.append(row1, ['[Request In: 38]'])
+        store.append(row1, ['Time: 0.0025777 seconds'])
+        store.append(row1, ['Transaction ID: 0xcf1f'])
+
+
+
+        row2 = store.append(None, ['Domain Name System (response)        '])
+        store.append(row2, ['[Request In: 38]'])
+        store.append(row2, ['Time: 0.0025777 seconds'])
+        store.append(row2, ['Transaction ID: 0xcf1f'])
+        store.append(row2, ['Flags: 0x867 (Standard query response , No error)'])
+        store.append(row2, ['Questions:1'])
+        store.append(row2, ['Answers RRS: 6'])
+        store.append(row2, ['Authority RRS:0'])
+        store.append(row2, ['Additional RRS:0'])
+
+        row3 = store.append(None, ['Queries'])
+        store.append(row3, ['www.cnn.com: type A, Class IN'])
+
+        treeView = Gtk.TreeView(store)
+        treeViewColumn = Gtk.TreeViewColumn('Project')
+        treeView.append_column(treeViewColumn)
+
+        cell = Gtk.CellRendererText()
+        treeViewColumn.pack_start(cell, True)
+        treeViewColumn.add_attribute(cell, 'text', 0)
+        self.page3.add(treeView)
+
+        #************LIST COMPONENT************
+
         rawDataLabel = Gtk.Label()
         rawDataLabel.set_markup("<b>Raw Data Area View</b>")
         self.notebook.append_page(self.page3, rawDataLabel)
