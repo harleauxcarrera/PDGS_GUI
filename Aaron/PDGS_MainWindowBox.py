@@ -15,6 +15,7 @@ class MainWindow(Gtk.Window):
 	def __init__(self):
 		Gtk.Window.__init__(self, title="Protocol Dissector Generator System")
 
+
 		# Main Box
 		box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL, spacing = 5)
 		self.add(box)
@@ -27,8 +28,31 @@ class MainWindow(Gtk.Window):
 		buttonBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
 		buttonBox.set_homogeneous(False)
 
+
+		#Project/Dissector Box
+		projectDissectorBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
+		projectDissectorBox.set_homogeneous(False)
+
+		#Project Navigator Box
+		projectNavigatorBox = Gtk.Box(orientation = Gtk.Orientation.VERTICAL, spacing = 5)
+		projectNavigatorBox.set_homogeneous(False)
+
+		#Dissector Builder Area Box
+		dissectorBuilderAreaBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
+		dissectorBuilderAreaBox.set_homogeneous(False)
+
+		projectDissectorBox.pack_start(projectNavigatorBox, True, True, 5)
+		projectDissectorBox.pack_start(dissectorBuilderAreaBox, True, True, 5)
+
+
+		#PacketPreviewAreaBox
+		packetPreviewAreaBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
+		packetPreviewAreaBox.set_homogeneous(False)
+
 		box.pack_start(labelBox, True, True, 5)
 		box.pack_start(buttonBox, True, True, 5)
+		box.pack_start(projectDissectorBox, True, True, 5)
+		box.pack_start(packetPreviewAreaBox, True, True, 5)
 
 		# Label
 		PDGSLabel = Gtk.Label()
@@ -80,6 +104,36 @@ class MainWindow(Gtk.Window):
 		OpenPCAPButton = Gtk.Button(label="Open PCAP")
 		OpenPCAPButton.connect("clicked", self.OpenPCAPButton_clicked)
 		buttonBox.pack_start(OpenPCAPButton, True, True, 0)
+
+
+
+
+
+		#Project Navigator
+		store = Gtk.TreeStore(str)
+
+		row1 = store.append(None, ['Project1        '])
+
+		store.append(row1, ['dissector1'])
+		store.append(row1, ['pcap1'])
+
+		row2 = store.append(None, ['Project 2       '])
+		store.append(row2, ['dissector2'])
+		store.append(row2, ['pcap2'])
+
+		treeview = Gtk.TreeView(store)
+		tvcolumn = Gtk.TreeViewColumn('Project')
+		treeview.append_column(tvcolumn)
+
+		cell = Gtk.CellRendererText()
+		tvcolumn.pack_start(cell, True)
+		tvcolumn.add_attribute(cell, 'text', 0)
+		projectNavigatorBox.add(treeview)
+
+
+
+
+
 
 
 	#User clicks CreateProjectButton
