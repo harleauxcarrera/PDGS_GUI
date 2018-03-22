@@ -9,6 +9,7 @@ import exportProject as exportProjectWindow
 import generateDissectorScript as generateDissectorScriptWindow
 import organizeViews as organizeViewsWindow
 import openPCAP as openPCAPWindow
+import BuilderAreaBox as BuilderAreaBox
 
 class MainWindow(Gtk.Window):
 
@@ -40,7 +41,8 @@ class MainWindow(Gtk.Window):
 		projectNavigatorBox.set_homogeneous(False)
 
 		#Dissector Builder Area Box
-		dissectorBuilderAreaBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 0)
+		dissectorBuilderAreaBox = BuilderAreaBox.BuilderWindow()
+		dissectorBuilderAreaBox.set_size_request(1100, 200)
 		dissectorBuilderAreaBox.set_homogeneous(False)
 
 		#projectDissectorBox.pack_start(projectNavigatorBox, True, True, 5)
@@ -136,10 +138,7 @@ class MainWindow(Gtk.Window):
 
 		#***********************************************Dissector Builder Area**************************************************
 
-
-
-
-
+		#dissectorBuilderAreaBox = BuilderAreaBox.BuilderWindow()
 
 		#*************************************************Packet Preview Area***************************************************
 		
