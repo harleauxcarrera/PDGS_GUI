@@ -29,8 +29,10 @@ class MainWindow(Gtk.Window):
 		buttonBox.set_homogeneous(False)
 
 		#Project/Dissector Box
-		projectDissectorBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 0)
-		projectDissectorBox.set_homogeneous(False)
+		#projectDissectorBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 0)
+		#projectDissectorBox.set_homogeneous(False)
+		projectDissectorGrid = Gtk.Grid()
+		
 
 		#Project Navigator Box
 		projectNavigatorBox = Gtk.Box(orientation = Gtk.Orientation.VERTICAL, spacing = 0)
@@ -41,8 +43,10 @@ class MainWindow(Gtk.Window):
 		dissectorBuilderAreaBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 0)
 		dissectorBuilderAreaBox.set_homogeneous(False)
 
-		projectDissectorBox.pack_start(projectNavigatorBox, True, True, 5)
-		projectDissectorBox.pack_start(dissectorBuilderAreaBox, True, True, 5)
+		#projectDissectorBox.pack_start(projectNavigatorBox, True, True, 5)
+		#projectDissectorBox.pack_start(dissectorBuilderAreaBox, True, True, 5)
+		projectDissectorGrid.add(projectNavigatorBox)
+		projectDissectorGrid.attach_next_to(dissectorBuilderAreaBox, projectNavigatorBox, Gtk.PositionType.RIGHT, 1, 1)
 
 		#PacketPreviewAreaBox
 		packetPreviewAreaBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 0)
@@ -51,7 +55,8 @@ class MainWindow(Gtk.Window):
 
 		box.pack_start(labelBox, True, False, 5)
 		box.pack_start(buttonBox, True, False, 5)
-		box.pack_start(projectDissectorBox, True, True, 5)
+		#box.pack_start(projectDissectorBox, True, True, 5)
+		box.pack_start(projectDissectorGrid, True, True, 5)
 		box.pack_start(packetPreviewAreaBox, True, True, 5)
 
 		# Label
