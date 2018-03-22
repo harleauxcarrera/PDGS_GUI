@@ -10,6 +10,7 @@ import generateDissectorScript as generateDissectorScriptWindow
 import organizeViews as organizeViewsWindow
 import openPCAP as openPCAPWindow
 import BuilderAreaBox as BuilderAreaBox
+import console as console
 
 class MainWindow(Gtk.Window):
 
@@ -51,9 +52,10 @@ class MainWindow(Gtk.Window):
 		projectDissectorGrid.attach_next_to(dissectorBuilderAreaBox, projectNavigatorBox, Gtk.PositionType.RIGHT, 1, 1)
 
 		#PacketPreviewAreaBox
-		packetPreviewAreaBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 0)
+		#packetPreviewAreaBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 0)
+		packetPreviewAreaBox = console.ConsoleAreaWindow()
 		packetPreviewAreaBox.set_size_request(1300, 100)
-		packetPreviewAreaBox.set_homogeneous(False)
+		packetPreviewAreaBox.set_homogeneous(True)
 
 		box.pack_start(labelBox, True, False, 5)
 		box.pack_start(buttonBox, True, False, 5)
@@ -142,32 +144,32 @@ class MainWindow(Gtk.Window):
 
 		#*************************************************Packet Preview Area***************************************************
 		
-		previewAreas = Gtk.Notebook()
-		packetPreviewAreaBox.pack_start(previewAreas, True, True, 5)
+		#previewAreas = Gtk.Notebook()
+		#packetPreviewAreaBox.pack_start(previewAreas, True, True, 5)
 
-		packetStreamBox = Gtk.Box(spacing = 5)
-		packetStreamBox.set_homogeneous(False)
-		packetStreamBox.set_border_width(5)
-		packetStreamBox.add(Gtk.Label('Test'))
-		previewAreas.append_page(packetStreamBox, Gtk.Label('Packet Stream Area View'))
+		#packetStreamBox = Gtk.Box(spacing = 5)
+		#packetStreamBox.set_homogeneous(False)
+		#packetStreamBox.set_border_width(5)
+		#packetStreamBox.add(Gtk.Label('Test'))
+		#previewAreas.append_page(packetStreamBox, Gtk.Label('Packet Stream Area View'))
 
-		dissectedStreamBox = Gtk.Box(spacing = 5)
-		dissectedStreamBox.set_homogeneous(False)
-		dissectedStreamBox.set_border_width(5)
-		dissectedStreamBox.add(Gtk.Label('Test'))
-		previewAreas.append_page(dissectedStreamBox, Gtk.Label('Dissected Stream Area View'))
+		#dissectedStreamBox = Gtk.Box(spacing = 5)
+		#dissectedStreamBox.set_homogeneous(False)
+		#dissectedStreamBox.set_border_width(5)
+		#dissectedStreamBox.add(Gtk.Label('Test'))
+		#previewAreas.append_page(dissectedStreamBox, Gtk.Label('Dissected Stream Area View'))
 
-		rawDataBox = Gtk.Box(spacing = 5)
-		rawDataBox.set_homogeneous(False)
-		rawDataBox.set_border_width(5)
-		rawDataBox.add(Gtk.Label('Test'))
-		previewAreas.append_page(rawDataBox, Gtk.Label('Raw Data Area'))
+		#rawDataBox = Gtk.Box(spacing = 5)
+		#rawDataBox.set_homogeneous(False)
+		#rawDataBox.set_border_width(5)
+		#rawDataBox.add(Gtk.Label('Test'))
+		#previewAreas.append_page(rawDataBox, Gtk.Label('Raw Data Area'))
 
-		consoleBox = Gtk.Box(spacing = 5)
-		consoleBox.set_homogeneous(False)
-		consoleBox.set_border_width(5)
-		consoleBox.add(Gtk.Label('Test'))
-		previewAreas.append_page(consoleBox, Gtk.Label('Console Area'))
+		#consoleBox = Gtk.Box(spacing = 5)
+		#consoleBox.set_homogeneous(False)
+		#consoleBox.set_border_width(5)
+		#consoleBox.add(Gtk.Label('Test'))
+		#previewAreas.append_page(consoleBox, Gtk.Label('Console Area'))
 
 
 	#User clicks CreateProjectButton
