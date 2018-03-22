@@ -5,7 +5,9 @@ import endField as endField
 import refListField as refListField
 import packetInfo as packetInfo
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk
+
+DRAG_ACTION = Gdk.DragAction.COPY
 
 class BuilderWindow(Gtk.Box):
 	
@@ -15,7 +17,8 @@ class BuilderWindow(Gtk.Box):
 		self.set_border_width(10)
 
 		CanvasLabel = Gtk.Label("Builder Canvas")
-		#CanvasLabel.drag_dest_set()
+		CanvasLabel.drag_dest_set(Gtk.DestDefaults.ALL, [], DRAG_ACTION)
+		CanvasLabel.connect("drag-data-received", self.on_drag_data_received)
 
 		self.pack_start(CanvasLabel, True, False, 0)
 
@@ -38,6 +41,8 @@ class BuilderWindow(Gtk.Box):
 		startFieldButton = Gtk.Button("Start Field")
 		fieldBoxMenu1.pack_start(startFieldButton, True, True, 0)
 		startFieldButton.connect("clicked", self.startFieldClicked)
+		startFieldButton.drag_source_set(Gdk.ModifierType.BUTTON1_MASK, [], DRAG_ACTION)
+		startFieldButton.connect("drag-data-get", self.on_drag_data_get)
 
 		field1ByteButton = Gtk.Button("Field (1 byte)")
 		fieldBoxMenu1.pack_start(field1ByteButton, False, False, 0)
@@ -158,6 +163,14 @@ class BuilderWindow(Gtk.Box):
 		win2.connect("destroy", Gtk.main_quit)
 		win2.show_all()
 		Gtk.main()
+
+	def on_drag_data_get(self, widget, drag_context, data, info, time):
+		text = self.get_text()
+		#data.set_text(text, -1)
+
+	def on_drag_data_received(self, widget, drag_context, x, y, data, info, time):
+		#text = data.get_text()
+		print("Field added:")
 
 win = Gtk.Window()
 buildBox = BuilderWindow()
