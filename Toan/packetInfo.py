@@ -2,18 +2,19 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-class refListFieldWindow(Gtk.Window):
+class packetInfoWindow(Gtk.Window):
 
     def __init__(self):
-        Gtk.Window.__init__(self, title="Reference List[Reference List Name]")
+        Gtk.Window.__init__(self, title="PacketInfo")
 
         self.set_default_size(360, 200)
 
+        box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
         #APPEND REFERENCE LIST VALUES HERE#
         self.liststore = Gtk.ListStore(str, str)
-        self.liststore.append(["Fedora", "http://fedoraproject.org/"])
-        self.liststore.append(["Slackware", "http://www.slackware.com/"])
-        self.liststore.append(["Sidux", "http://sidux.com/"])
+        self.liststore.append(["X", "X"])
+        self.liststore.append(["Y", "Y"])
+        self.liststore.append(["Y", "Y"])
 
         treeview = Gtk.TreeView(model=self.liststore)
 
@@ -29,14 +30,13 @@ class refListFieldWindow(Gtk.Window):
         treeview.append_column(column_editabletext)
 
         renderer_editabletext.connect("edited", self.text_edited)
-
-        box = Gtk.Box(orientation = Gtk.Orientation.VERTICAL)
         self.add(box)
         box.add(treeview)
-        
+
         add_button = Gtk.Button.new_with_mnemonic("+")
         add_button.connect("clicked", self.on_add_clicked)
         box.add(add_button)
+
 
     def on_add_clicked(self, button):
         print("New field was created")
@@ -44,4 +44,3 @@ class refListFieldWindow(Gtk.Window):
 
     def text_edited(self, widget, path, text):
         self.liststore[path][1] = text
-

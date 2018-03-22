@@ -46,5 +46,17 @@ class startFieldWindow(Gtk.Window):
         grid.attach(pattern, 1, 3, 4, 1)
 
         button1 = Gtk.Button("OK")
+        button1.connect("clicked", self.on_open_clicked)
         grid.attach_next_to(button1, pattern, Gtk.PositionType.BOTTOM, 1, 1)
+        cancel_button = Gtk.Button("Cancel")
+        cancel_button.connect("clicked", self.on_close_clicked)
+        grid.attach_next_to(cancel_button, button1, Gtk.PositionType.RIGHT, 1, 1)
 
+        #added these funcs for cancel and ok button
+    def on_open_clicked(self, button):
+        print("New start field was created")
+        self.destroy()
+
+    def on_close_clicked(self, button):
+        print("Closing application")
+        self.destroy()

@@ -3,6 +3,7 @@ import Field as Field
 import startField as startField
 import endField as endField
 import refListField as refListField
+import packetInfo as packetInfo
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
@@ -13,9 +14,8 @@ class BuilderWindow(Gtk.Box):
 
 		self.set_border_width(10)
 
-		#mainBuilderBox = Gtk.Box(spacing=10)
-
 		CanvasLabel = Gtk.Label("Builder Canvas")
+		#CanvasLabel.drag_dest_set()
 
 		self.pack_start(CanvasLabel, True, False, 0)
 
@@ -27,50 +27,59 @@ class BuilderWindow(Gtk.Box):
 		optionsStack.set_transition_duration(1000)
 
 		#######################################################
+		#Field options menu
 
-		fieldBox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+		fieldBox = Gtk.Box(spacing=10)
 		optionsStack.add_titled(fieldBox, "fields", "Field")
 
+		fieldBoxMenu1 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+		fieldBox.pack_start(fieldBoxMenu1, True, True, 0)
+
 		startFieldButton = Gtk.Button("Start Field")
-		fieldBox.pack_start(startFieldButton, False, False, 0)
+		fieldBoxMenu1.pack_start(startFieldButton, True, True, 0)
 		startFieldButton.connect("clicked", self.startFieldClicked)
 
 		field1ByteButton = Gtk.Button("Field (1 byte)")
-		fieldBox.pack_start(field1ByteButton, False, False, 0)
+		fieldBoxMenu1.pack_start(field1ByteButton, False, False, 0)
 		field1ByteButton.connect("clicked" , self.fieldClicked)
 
 		field2ByteButton = Gtk.Button("Field (2 byte)")
-		fieldBox.pack_start(field2ByteButton, False, False, 0)
+		fieldBoxMenu1.pack_start(field2ByteButton, False, False, 0)
 		field2ByteButton.connect("clicked" , self.fieldClicked)
 
 		field4ByteButton = Gtk.Button("Field (4 byte)")
-		fieldBox.pack_start(field4ByteButton, False, False, 0)
+		fieldBoxMenu1.pack_start(field4ByteButton, False, False, 0)
 		field4ByteButton.connect("clicked" , self.fieldClicked)
 
 		field8ByteButton = Gtk.Button("Field (8 byte)")
-		fieldBox.pack_start(field8ByteButton, False, False, 0)
+		fieldBoxMenu1.pack_start(field8ByteButton, False, False, 0)
 		field8ByteButton.connect("clicked" , self.fieldClicked)
 
+		fieldBoxMenu2 = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
+		fieldBox.pack_start(fieldBoxMenu2, True, True, 0)
+
 		field16ByteButton = Gtk.Button("Field (16 byte)")
-		fieldBox.pack_start(field16ByteButton, False, False, 0)
+		fieldBoxMenu2.pack_start(field16ByteButton, False, False, 0)
 		field16ByteButton.connect("clicked" , self.fieldClicked)
 
 		fieldVarSizeButton = Gtk.Button("Field (Var Size)")
-		fieldBox.pack_start(fieldVarSizeButton, False, False, 0)
+		fieldBoxMenu2.pack_start(fieldVarSizeButton, False, False, 0)
 		fieldVarSizeButton.connect("clicked" , self.fieldClicked)
 
 		endFieldButton = Gtk.Button("End Field")
-		fieldBox.pack_start(endFieldButton, False, False, 0)
+		fieldBoxMenu2.pack_start(endFieldButton, False, False, 0)
 		endFieldButton.connect("clicked", self.endFieldClicked)
 
 		referenceListButton = Gtk.Button("Reference List")
-		fieldBox.pack_start(referenceListButton, False, False, 0)
+		fieldBoxMenu2.pack_start(referenceListButton, False, False, 0)
 		referenceListButton.connect("clicked", self.refListClicked)
 
 		packetInfoButton = Gtk.Button("Packet Info")
-		fieldBox.pack_start(packetInfoButton, False, False, 0)
+		fieldBoxMenu2.pack_start(packetInfoButton, False, False, 0)
+		packetInfoButton.connect("clicked", self.packetInfoClicked)
 
 		########################################################
+		#Construct options menu
 
 		constructorBox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=10)
 		optionsStack.add_titled(constructorBox, "constructors", "Construct")
@@ -116,29 +125,36 @@ class BuilderWindow(Gtk.Box):
 		optionBox.pack_start(optionsStack, False, False, 0)
 
 	def startFieldClicked(self, button):
-		print("Add Start Field")
+		print("Open Start Field Window")
 		win2 = startField.startFieldWindow()
 		win2.connect("destroy", Gtk.main_quit)
 		win2.show_all()
 		Gtk.main()
 
 	def fieldClicked(self, button):
-		print("Add Field")
+		print("Open Field Window")
 		win2 = Field.fieldWindow()
 		win2.connect("destroy", Gtk.main_quit)
 		win2.show_all()
 		Gtk.main()
 
 	def endFieldClicked(self, button):
-		print("Add End Field")
+		print("Open End Field Window")
 		win2 = endField.endFieldWindow()
 		win2.connect("destroy", Gtk.main_quit)
 		win2.show_all()
 		Gtk.main()
 
 	def refListClicked(self, button):
-		print("Add Reference Field")
+		print("Open Reference Field Window")
 		win2 = refListField.refListFieldWindow()
+		win2.connect("destroy", Gtk.main_quit)
+		win2.show_all()
+		Gtk.main()
+
+	def packetInfoClicked(self, button):
+		print("Open Packet Info Window")
+		win2 = packetInfo.packetInfoWindow()
 		win2.connect("destroy", Gtk.main_quit)
 		win2.show_all()
 		Gtk.main()
