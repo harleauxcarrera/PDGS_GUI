@@ -7,6 +7,7 @@ class fieldWindow(Toplevel):
 
         Toplevel.__init__(self)
         self.title("Field Window")
+        self.geometry("300x250")
 
         mainFrame = Frame(self)
         mainFrame.pack()
@@ -46,6 +47,8 @@ class fieldWindow(Toplevel):
         buttonFrame.pack(side=BOTTOM)
         okButton = Button(buttonFrame, text="Ok", command=self.withdraw)
         cancelButton = Button(buttonFrame, text="Cancel", command=self.destroy)
+        cancelButton.pack(side=RIGHT)
+        okButton.pack(side=RIGHT)
 
         name.grid(row=0, column=0)
         nameInput.grid(row=0, column=1)
@@ -65,6 +68,5 @@ class fieldWindow(Toplevel):
         vconstInput.grid(row=7, column=1)
         req.grid(row=8, column=0)
         reqCheck.grid(row=8, column=1)
-        cancelButton.pack(side=RIGHT)
-        okButton.pack(side=RIGHT)
+
 
