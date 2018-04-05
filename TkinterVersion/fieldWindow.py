@@ -1,14 +1,12 @@
 from Tkinter import *
 import ttk
 
-def openField():
-    openWindow = fieldWindow(root)
-
 class fieldWindow(Toplevel):
 
     def __init__(self, main):
 
         Toplevel.__init__(self)
+        self.title("Field Window")
 
         mainFrame = Frame(self)
         mainFrame.pack()
@@ -70,13 +68,3 @@ class fieldWindow(Toplevel):
         cancelButton.pack(side=RIGHT)
         okButton.pack(side=RIGHT)
 
-
-
-root = Tk()
-
-frame = Frame(root)
-frame.pack()
-button = Button(frame, text="Open Field Window", command=openField)
-button.pack(side=LEFT)
-
-root.mainloop()
