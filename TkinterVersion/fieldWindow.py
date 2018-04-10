@@ -5,9 +5,8 @@ class fieldWindow(Toplevel):
 
     def __init__(self, main):
 
-        Toplevel.__init__(self)
+        Toplevel.__init__(self, width=300, height=250)
         self.title("Field Window")
-        self.geometry("300x250")
 
         mainFrame = Frame(self)
         mainFrame.pack()
@@ -44,7 +43,7 @@ class fieldWindow(Toplevel):
         reqCheck = Checkbutton(mainFrame)
 
         buttonFrame = Frame(self)
-        buttonFrame.pack(side=BOTTOM)
+        buttonFrame.pack(side=BOTTOM, fill=X, expand=1)
         okButton = Button(buttonFrame, text="Ok", command=self.withdraw)
         cancelButton = Button(buttonFrame, text="Cancel", command=self.destroy)
         cancelButton.pack(side=RIGHT)

@@ -15,7 +15,7 @@ class SwitchWorkspace(Gtk.Window):
         labelBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
         labelBox.set_homogeneous(False)
 
-        # Workspace Box
+        # Workspace Box`````````````````````````
         workspaceBox = Gtk.Box(orientation = Gtk.Orientation.HORIZONTAL, spacing = 5)
         workspaceBox.set_homogeneous(False)
 
