@@ -34,5 +34,3 @@ class Project:
         return self.dissector
     def setDissector(self, dissector):
         self.dissector = dissector
-
-    #def exportAsXML(self):
