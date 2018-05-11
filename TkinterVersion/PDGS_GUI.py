@@ -11,6 +11,7 @@ import dissectedStreamArea as dissectedStreamArea
 import rawData as rawData
 import consoleArea as consoleArea
 import createProject as createProject
+import dndManager
 
 root = Tk()
 root.title("Protocol Dissector Generator System")
@@ -57,6 +58,101 @@ def raiseField():
 def raiseConstruct():
     paletteConstructFrame.tkraise()
 
+def organizeViews():
+    organizeWindow = Toplevel(root, width=200, height=200)
+    organizeWindow.transient(root)
+    organizeWindow.geometry("300x300")
+    organizeWindow.title("Organize Views")
+    organizeTitleFrame = Frame(organizeWindow)
+    organizeTitleFrame.pack(side=TOP)
+    organizeTitle = Label(organizeTitleFrame, text="Customize the views")
+    organizeTitle.pack(fill=X)
+    organizeViewsFrame = Frame(organizeWindow)
+    organizeViewsFrame.pack(fill=X)
+    organizeViewsFrame.grid_columnconfigure(0, weight=1)
+    organizeViewsFrame.grid_columnconfigure(1, weight=1)
+    organizeViewsFrame.grid_columnconfigure(2, weight=1)
+
+    organizeViewsFrame.grid_rowconfigure(0, weight=1)
+    projectNavRadioLabel = Label(organizeViewsFrame, text="Project Navigation")
+    projectNavRadioLabel.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
+    projectNavRadioHideButton = Radiobutton(organizeViewsFrame, text="Hide", value=1, variable=1,
+                                            command=navigatorWindow.withdraw)
+    projectNavRadioHideButton.grid(row=0, column=1, sticky="ew", padx=5, pady=5)
+    projectNavRadioShowButton = Radiobutton(organizeViewsFrame, text="Show", value=2, variable=1,
+                                            command=navigatorWindow.deiconify)
+    projectNavRadioShowButton.grid(row=0, column=2, sticky="ew", padx=5, pady=5)
+
+    organizeViewsFrame.grid_rowconfigure(1, weight=1)
+    dissBuildAreaRadioLabel = Label(organizeViewsFrame, text="Dissector Building Area")
+    dissBuildAreaRadioLabel.grid(row=1, column=0, sticky="ew", padx=5, pady=5)
+    dissBuildAreaRadioHideButton = Radiobutton(organizeViewsFrame, text="Hide", value=1, variable=2,
+                                               command=builderWindow.withdraw)
+    dissBuildAreaRadioHideButton.grid(row=1, column=1, sticky="ew", padx=5, pady=5)
+    dissBuildAreaRadioShowButton = Radiobutton(organizeViewsFrame, text="Show", value=2, variable=2,
+                                               command=builderWindow.deiconify)
+    dissBuildAreaRadioShowButton.grid(row=1, column=2, sticky="ew", padx=5, pady=5)
+
+    organizeViewsFrame.grid_rowconfigure(2, weight=1)
+    paletteRadioLabel = Label(organizeViewsFrame, text="Palette")
+    paletteRadioLabel.grid(row=2, column=0, sticky="ew", padx=5, pady=5)
+    paletteRadioHideButton = Radiobutton(organizeViewsFrame, text="Hide", value=1, variable=3,
+                                               command=paletteWindow.withdraw)
+    paletteRadioHideButton.grid(row=2, column=1, sticky="ew", padx=5, pady=5)
+    paletteRadioShowButton = Radiobutton(organizeViewsFrame, text="Show", value=2, variable=3,
+                                               command=paletteWindow.deiconify)
+    paletteRadioShowButton.grid(row=2, column=2, sticky="ew", padx=5, pady=5)
+
+    organizeViewsFrame.grid_rowconfigure(3, weight=1)
+    packetStreamAreaRadioLabel = Label(organizeViewsFrame, text="Packet Stream Area")
+    packetStreamAreaRadioLabel.grid(row=3, column=0, sticky="ew", padx=5, pady=5)
+    packetStreamAreaRadioHideButton = Radiobutton(organizeViewsFrame, text="Hide", value=1, variable=4,
+                                         command=packetStreamWindow.withdraw)
+    packetStreamAreaRadioHideButton.grid(row=3, column=1, sticky="ew", padx=5, pady=5)
+    packetStreamAreaRadioShowButton = Radiobutton(organizeViewsFrame, text="Show", value=2, variable=4,
+                                         command=packetStreamWindow.deiconify)
+    packetStreamAreaRadioShowButton.grid(row=3, column=2, sticky="ew", padx=5, pady=5)
+
+    organizeViewsFrame.grid_rowconfigure(4, weight=1)
+    dissStreamAreaRadioLabel = Label(organizeViewsFrame, text="Dissected Stream Area")
+    dissStreamAreaRadioLabel.grid(row=4, column=0, sticky="ew", padx=5, pady=5)
+    dissStreamAreaRadioHideButton = Radiobutton(organizeViewsFrame, text="Hide", value=1, variable=5,
+                                                  command=dissectedStreamWindow.withdraw)
+    dissStreamAreaRadioHideButton.grid(row=4, column=1, sticky="ew", padx=5, pady=5)
+    dissStreamAreaRadioShowButton = Radiobutton(organizeViewsFrame, text="Show", value=2, variable=5,
+                                                  command=dissectedStreamWindow.deiconify)
+    dissStreamAreaRadioShowButton.grid(row=4, column=2, sticky="ew", padx=5, pady=5)
+
+    organizeViewsFrame.grid_rowconfigure(5, weight=1)
+    rawDataRadioLabel = Label(organizeViewsFrame, text="Raw Data Area")
+    rawDataRadioLabel.grid(row=5, column=0, sticky="ew", padx=5, pady=5)
+    rawDataRadioHideButton = Radiobutton(organizeViewsFrame, text="Hide", value=1, variable=6,
+                                                command=rawDataWindow.withdraw)
+    rawDataRadioHideButton.grid(row=5, column=1, sticky="ew", padx=5, pady=5)
+    rawDataRadioShowButton = Radiobutton(organizeViewsFrame, text="Show", value=2, variable=6,
+                                                command=rawDataWindow.deiconify)
+    rawDataRadioShowButton.grid(row=5, column=2, sticky="ew", padx=5, pady=5)
+
+    organizeViewsFrame.grid_rowconfigure(6, weight=1)
+    consoleAreaRadioLabel = Label(organizeViewsFrame, text="Console Area")
+    consoleAreaRadioLabel.grid(row=6, column=0, sticky="ew", padx=5, pady=5)
+    consoleAreaRadioHideButton = Radiobutton(organizeViewsFrame, text="Hide", value=1, variable=7,
+                                         command=consoleWindow.withdraw)
+    consoleAreaRadioHideButton.grid(row=6, column=1, sticky="ew", padx=5, pady=5)
+    consoleAreaRadioShowButton = Radiobutton(organizeViewsFrame, text="Show", value=2, variable=7,
+                                         command=consoleWindow.deiconify)
+    consoleAreaRadioShowButton.grid(row=6, column=2, sticky="ew", padx=5, pady=5)
+
+    organizeButtonFrame = Frame(organizeWindow)
+    organizeButtonFrame.pack(fill=X)
+    okButton = Button(organizeButtonFrame, text="Create", command=organizeWindow.withdraw)
+    cancelButton = Button(organizeButtonFrame, text="Cancel", command=organizeWindow.destroy)
+    cancelButton.pack(side=RIGHT)
+    okButton.pack(side=RIGHT)
+
+def openPcap():
+    openPcapFile = tkFileDialog.askopenfilename(initialdir = "/",title = "Select PCAP to open",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+
 ###############################################################
 ###Main Menu Button Area###
 ###############################################################
@@ -85,10 +181,10 @@ exportProjectButton.pack(side=LEFT, padx=5, pady=5, fill=X, expand=1)
 generateScriptButton = Button(menuFrame, text="Generate Dissector Script")
 generateScriptButton.pack(side=LEFT, padx=5, pady=5, fill=X, expand=1)
 
-organizeViewsButton = Button(menuFrame, text="Organize Views")
+organizeViewsButton = Button(menuFrame, text="Organize Views", command=organizeViews)
 organizeViewsButton.pack(side=LEFT, padx=5, pady=5, fill=X, expand=1)
 
-openPcapButton = Button(menuFrame, text="Open PCAP")
+openPcapButton = Button(menuFrame, text="Open PCAP", command=openPcap)
 openPcapButton.pack(side=LEFT, padx=5, pady=5, fill=X, expand=1)
 
 ###############################################################
@@ -111,6 +207,7 @@ builderFrame = Frame(builderWindow)
 builderFrame.pack(padx=20, pady=20, side=LEFT)
 builderCanvas = Canvas(builderFrame, width=500, height=450, bg="WHITE")
 builderCanvas.pack()
+dnd = dndManager.DragManager()
 
 ###############################################################
 ###Dissector Builder Area Palette###
@@ -136,10 +233,11 @@ paletteConstructFrame = Frame(paletteFrame)
 paletteConstructFrame.grid(row=0, column=0, sticky="nsew")
 paletteConstructFrame.grid_columnconfigure(0, weight=1)
 paletteConstructFrame.grid_columnconfigure(1, weight=1)
-randomButton = Button(paletteConstructFrame, text="Field", command=openFieldWindow)
-randomButton.grid(row=0, column=0, sticky="ew")
-randomButton2 = Button(paletteConstructFrame, text="Field", command=openFieldWindow)
-randomButton2.grid(row=0, column=1, sticky="ew")
+expressionButton = Button(paletteConstructFrame, text="Expression")
+expressionButton.grid(row=0, column=0, columnspan=2, sticky="ew")
+dnd.add_dragable(expressionButton)
+connectorButton = Button(paletteConstructFrame, text="Connector")
+connectorButton.grid(row=1, column=0, columnspan=2, sticky="ew")
 
 paletteFieldFrame = Frame(paletteFrame)
 paletteFieldFrame.grid(row=0, column=0, sticky="nsew")
