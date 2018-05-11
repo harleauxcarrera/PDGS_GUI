@@ -1,5 +1,9 @@
+from Tkinter import *
 class DragManager():
+
+    draggedWidget = 0
     def add_dragable(self, widget):
+        self.draggedWidget = widget
         widget.bind("<ButtonPress-1>", self.on_start)
         widget.bind("<B1-Motion>", self.on_drag)
         widget.bind("<ButtonRelease-1>", self.on_drop)
@@ -19,8 +23,10 @@ class DragManager():
         # find the widget under the cursor
         x,y = event.widget.winfo_pointerxy()
         target = event.widget.winfo_containing(x,y)
-        print("Dragged")
+        button = Button(target, text="BUTTTTONNN")
+        print("Dragged to x ",x," and y ",y)
         try:
-            target.configure(image=event.widget.cget("image"))
+            #target.create_rectangle(x-10-260, y-5-125, x+10-260, y+5-125, fill="blue")
+            target.create_window(x-260, y-125, window=button)
         except:
             pass
