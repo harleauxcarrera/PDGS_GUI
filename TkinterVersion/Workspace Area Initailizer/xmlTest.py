@@ -13,4 +13,4 @@ ET.SubElement(doc, "field6", name="Variable Data", value="Var size").text = "Thi
 
 
 tree = ET.ElementTree(root)
-tree.write("filename.xml")
+tree.write("ICMP.xml", encoding="utf-8", xml_declaration=True)
