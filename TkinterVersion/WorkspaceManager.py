@@ -1,5 +1,6 @@
 import Workspace
-class WorkspaceManager:
+
+class WorkspaceManager():
     activeWorkspace = "Workspace1"
     workspaceList = []
 

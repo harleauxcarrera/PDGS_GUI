@@ -1,4 +1,4 @@
-class Project:
+class Project():
 
     projectName = "Project1"
     projectDescription = "This is a project"
@@ -12,25 +12,25 @@ class Project:
         self.projectDescription = projectDescription
         Project.numberOfProjects += 1
 
-    def getProjectName(self, projectName):
+    def getProjectName(self):
         return self.projectName
     def setProjectName(self, projectName):
         self.projectName = projectName
 
-    def getProjectDescription(self, projectDescription):
+    def getProjectDescription(self):
         return self.projectDescription
     def setProjectDescription(self, projectDescription):
         self.projectDescription = projectDescription
 
-    def getNumberOfProjects(self, numberOfProjects):
+    def getNumberOfProjects(self):
         return self.numberOfProjects
 
-    def getPDT(self, protocolDecisionTree):
+    def getPDT(self):
         return self.protocolDecisionTree
     def setPDT(self, protocolDecisionTree):
         self.protocolDecisionTree = protocolDecisionTree
 
-    def getDissector(self, dissector):
+    def getDissector(self):
         return self.dissector
     def setDissector(self, dissector):
         self.dissector = dissector
