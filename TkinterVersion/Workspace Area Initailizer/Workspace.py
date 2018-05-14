@@ -22,3 +22,7 @@ class Workspace:
 
         tree = ET.ElementTree(root)
         tree.write("filename.xml")
+
+    #def createProject(self, Project projectName):
+
+    #def deleteProject(self, Project projectName):
