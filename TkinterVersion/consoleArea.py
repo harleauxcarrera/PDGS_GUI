@@ -19,7 +19,7 @@ class consoleArea(Toplevel):
         self.listbox_frame = Frame(consoleFrame)
         self.listbox_frame.grid(row=0, column=0, sticky="nsew")
 
-        error_list = ['No error message to show.']
+        error_list = ['No error message to show.','Error number 1','Error number 2','Error number 3']
         scrollbar = Scrollbar(main, orient="vertical")
         self.listbox = Listbox(self.listbox_frame, selectmode='extended', bg='white', width=60, yscrollcommand=scrollbar.set)
         self.listbox.pack(fill=X, expand=True)

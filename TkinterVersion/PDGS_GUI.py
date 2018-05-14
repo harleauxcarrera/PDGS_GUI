@@ -380,7 +380,7 @@ def organizeViews():
 
     organizeButtonFrame = Frame(organizeWindow)
     organizeButtonFrame.pack(fill=X)
-    okButton = Button(organizeButtonFrame, text="Create", command=organizeWindow.withdraw)
+    okButton = Button(organizeButtonFrame, text="Confirm", command=organizeWindow.withdraw)
     cancelButton = Button(organizeButtonFrame, text="Cancel", command=organizeWindow.destroy)
     cancelButton.pack(side=RIGHT)
     okButton.pack(side=RIGHT)
