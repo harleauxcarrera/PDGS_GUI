@@ -7,7 +7,7 @@ class DissectedPCAP():
 
         self.readableInformation = 0
         self.packetArray = 0
-        self.Tshark
+        self.Tshark = 0
 
     def applyToPCAP(self, pdtScript):
 

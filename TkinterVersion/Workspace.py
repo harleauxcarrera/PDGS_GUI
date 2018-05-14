@@ -3,14 +3,12 @@ import Project
 
 class Workspace():
 
-    workspaceName = "Workspace1"
-    workspaceDirectory = "Desktop"
-    projectList = []
-
-
 
     def __init__(self, workspaceName):
         self.workspaceName = workspaceName
+        self.workspaceDirectory = "Desktop"
+        self.project1 = Project.Project("Project1", "Random Description")
+        self.projectList = [self.project1]
 
     def saveProjectAsXML(self):
 
