@@ -11,12 +11,13 @@ import dissectedStreamArea as dissectedStreamArea
 import rawData as rawData
 import consoleArea as consoleArea
 import createProject as createProject
+import Controller
+
 #import dndManager
 
-class DragManager():
+class Field1ByteDragManager():
 
     def add_dragable(self, widget):
-        self.draggedWidget = widget
         widget.bind("<ButtonPress-1>", self.on_start)
         widget.bind("<B1-Motion>", self.on_drag)
         widget.bind("<ButtonRelease-1>", self.on_drop)
@@ -36,12 +37,214 @@ class DragManager():
         # find the widget under the cursor
         x,y = event.widget.winfo_pointerxy()
         target = event.widget.winfo_containing(x,y)
-        button = Button(target, text="BUTTTTONNN", command=openFieldWindow)
+        button = Button(target, text="Field1Byte", command=openFieldWindow)
         print("Dragged to x ",x," and y ",y)
         try:
             #target.create_rectangle(x-10-260, y-5-125, x+10-260, y+5-125, fill="blue")
             target.create_window(x-260, y-125, window=button)
-            openFieldWindow()
+        except:
+            pass
+
+class DragManager():
+
+    def add_dragable(self, widget):
+        widget.bind("<ButtonPress-1>", self.on_start)
+        widget.bind("<B1-Motion>", self.on_drag)
+        widget.bind("<ButtonRelease-1>", self.on_drop)
+        widget.configure(cursor="hand1")
+
+    def on_start(self, event):
+        # you could use this method to create a floating window
+        # that represents what is being dragged.
+        pass
+
+    def on_drag(self, event):
+        # you could use this method to move a floating window that
+        # represents what you're dragging
+        pass
+
+    def on_drop(self, event):
+        # find the widget under the cursor
+        x,y = event.widget.winfo_pointerxy()
+        target = event.widget.winfo_containing(x,y)
+        button = Button(target, text="FieldButton", command=openFieldWindow)
+        #button =
+        print("Dragged to x ",x," and y ",y)
+        try:
+            #target.create_rectangle(x-10-260, y-5-125, x+10-260, y+5-125, fill="blue")
+            target.create_window(x-260, y-125, window=button)
+        except:
+            pass
+
+class StartFieldDragManager():
+
+    def add_dragable(self, widget):
+        widget.bind("<ButtonPress-1>", self.on_start)
+        widget.bind("<B1-Motion>", self.on_drag)
+        widget.bind("<ButtonRelease-1>", self.on_drop)
+        widget.configure(cursor="hand1")
+
+    def on_start(self, event):
+        # you could use this method to create a floating window
+        # that represents what is being dragged.
+        pass
+
+    def on_drag(self, event):
+        # you could use this method to move a floating window that
+        # represents what you're dragging
+        pass
+
+    def on_drop(self, event):
+        # find the widget under the cursor
+        x,y = event.widget.winfo_pointerxy()
+        target = event.widget.winfo_containing(x,y)
+        button = Button(target, text="StartField", command=openStartField)
+        try:
+            #target.create_rectangle(x-10-260, y-5-125, x+10-260, y+5-125, fill="blue")
+            target.create_window(x-260, y-125, window=button)
+        except:
+            pass
+
+class EndFieldDragManager():
+
+    def add_dragable(self, widget):
+        widget.bind("<ButtonPress-1>", self.on_start)
+        widget.bind("<B1-Motion>", self.on_drag)
+        widget.bind("<ButtonRelease-1>", self.on_drop)
+        widget.configure(cursor="hand1")
+
+    def on_start(self, event):
+        # you could use this method to create a floating window
+        # that represents what is being dragged.
+        pass
+
+    def on_drag(self, event):
+        # you could use this method to move a floating window that
+        # represents what you're dragging
+        pass
+
+    def on_drop(self, event):
+        # find the widget under the cursor
+        x,y = event.widget.winfo_pointerxy()
+        target = event.widget.winfo_containing(x,y)
+        button = Button(target, text="EndField", command=openEndField)
+        try:
+            #target.create_rectangle(x-10-260, y-5-125, x+10-260, y+5-125, fill="blue")
+            target.create_window(x-260, y-125, window=button)
+        except:
+            pass
+
+class Field2ByteDragManager():
+
+    def add_dragable(self, widget):
+        widget.bind("<ButtonPress-1>", self.on_start)
+        widget.bind("<B1-Motion>", self.on_drag)
+        widget.bind("<ButtonRelease-1>", self.on_drop)
+        widget.configure(cursor="hand1")
+
+    def on_start(self, event):
+        # you could use this method to create a floating window
+        # that represents what is being dragged.
+        pass
+
+    def on_drag(self, event):
+        # you could use this method to move a floating window that
+        # represents what you're dragging
+        pass
+
+    def on_drop(self, event):
+        # find the widget under the cursor
+        x,y = event.widget.winfo_pointerxy()
+        target = event.widget.winfo_containing(x,y)
+        button = Button(target, text="Field2Byte", command=openFieldWindow)
+        try:
+            #target.create_rectangle(x-10-260, y-5-125, x+10-260, y+5-125, fill="blue")
+            target.create_window(x-260, y-125, window=button)
+        except:
+            pass
+
+class FieldVarSizeDragManager():
+
+    def add_dragable(self, widget):
+        widget.bind("<ButtonPress-1>", self.on_start)
+        widget.bind("<B1-Motion>", self.on_drag)
+        widget.bind("<ButtonRelease-1>", self.on_drop)
+        widget.configure(cursor="hand1")
+
+    def on_start(self, event):
+        # you could use this method to create a floating window
+        # that represents what is being dragged.
+        pass
+
+    def on_drag(self, event):
+        # you could use this method to move a floating window that
+        # represents what you're dragging
+        pass
+
+    def on_drop(self, event):
+        # find the widget under the cursor
+        x,y = event.widget.winfo_pointerxy()
+        target = event.widget.winfo_containing(x,y)
+        button = Button(target, text="FieldVarSize", command=openFieldWindow)
+        try:
+            #target.create_rectangle(x-10-260, y-5-125, x+10-260, y+5-125, fill="blue")
+            target.create_window(x-260, y-125, window=button)
+        except:
+            pass
+
+class ConnectorDragManager():
+
+    def add_dragable(self, widget):
+        widget.bind("<ButtonPress-1>", self.on_start)
+        widget.bind("<B1-Motion>", self.on_drag)
+        widget.bind("<ButtonRelease-1>", self.on_drop)
+        widget.configure(cursor="hand1")
+
+    def on_start(self, event):
+        # you could use this method to create a floating window
+        # that represents what is being dragged.
+        pass
+
+    def on_drag(self, event):
+        # you could use this method to move a floating window that
+        # represents what you're dragging
+        pass
+
+    def on_drop(self, event):
+        # find the widget under the cursor
+        x,y = event.widget.winfo_pointerxy()
+        target = event.widget.winfo_containing(x,y)
+        try:
+            target.create_rectangle(x-2-260, y-26-125, x+2-260, y+26-125, fill="black")
+        except:
+            pass
+
+class ConstructDragManager():
+
+    def add_dragable(self, widget):
+        widget.bind("<ButtonPress-1>", self.on_start)
+        widget.bind("<B1-Motion>", self.on_drag)
+        widget.bind("<ButtonRelease-1>", self.on_drop)
+        widget.configure(cursor="hand1")
+
+    def on_start(self, event):
+        # you could use this method to create a floating window
+        # that represents what is being dragged.
+        pass
+
+    def on_drag(self, event):
+        # you could use this method to move a floating window that
+        # represents what you're dragging
+        pass
+
+    def on_drop(self, event):
+        # find the widget under the cursor
+        x,y = event.widget.winfo_pointerxy()
+        target = event.widget.winfo_containing(x,y)
+        button = Button(target, text="~")
+        try:
+            target.create_window(x - 260, y - 125, window=button)
+            #target.create_rectangle(x-2-260, y-30-125, x+2-260, y+30-125, fill="black")
         except:
             pass
 
@@ -188,6 +391,7 @@ def openPcap():
 ###############################################################
 ###Main Menu Button Area###
 ###############################################################
+SystemController = Controller.Controller()
 
 menuFrame = Frame(root)
 menuFrame.pack(side=TOP, fill=X)
@@ -210,7 +414,7 @@ importProjectButton.pack(side=LEFT, padx=5, pady=5, fill=X, expand=1)
 exportProjectButton = Button(menuFrame, text="Export Project", command=exportProject)
 exportProjectButton.pack(side=LEFT, padx=5, pady=5, fill=X, expand=1)
 
-generateScriptButton = Button(menuFrame, text="Generate Dissector Script")
+generateScriptButton = Button(menuFrame, text="Generate Dissector Script", command=SystemController.generateXMLFormat)
 generateScriptButton.pack(side=LEFT, padx=5, pady=5, fill=X, expand=1)
 
 organizeViewsButton = Button(menuFrame, text="Organize Views", command=organizeViews)
@@ -240,6 +444,13 @@ builderFrame.pack(padx=20, pady=20, side=LEFT)
 builderCanvas = Canvas(builderFrame, width=500, height=450, bg="WHITE")
 builderCanvas.pack()
 dnd = DragManager()
+dndField1Byte = Field1ByteDragManager()
+dndField2Byte = Field2ByteDragManager()
+dndFieldVarSize = FieldVarSizeDragManager()
+dndConstruct = ConstructDragManager()
+dndStartField = StartFieldDragManager()
+dndEndField = EndFieldDragManager()
+dndConnector = ConnectorDragManager()
 
 ###############################################################
 ###Dissector Builder Area Palette###
@@ -268,10 +479,10 @@ paletteConstructFrame.grid_columnconfigure(1, weight=1)
 
 expressionButton = Button(paletteConstructFrame, text="Expression")
 expressionButton.grid(row=0, column=0, columnspan=2, sticky="ew", padx=5, pady=5)
-dnd.add_dragable(expressionButton)
+dndConstruct.add_dragable(expressionButton)
 connectorButton = Button(paletteConstructFrame, text="Connector")
 connectorButton.grid(row=1, column=0, columnspan=2, sticky="ew", padx=5, pady=5)
-dnd.add_dragable(connectorButton)
+dndConnector.add_dragable(connectorButton)
 
 relationalFrame = Frame(paletteConstructFrame)
 relationalFrame.grid(row=2, column=0, columnspan=2, sticky="ew")
@@ -283,22 +494,22 @@ relationalFrame.grid_columnconfigure(4, weight=1)
 relationalFrame.grid_columnconfigure(5, weight=1)
 lessThanButton = Button(relationalFrame, text="<")
 lessThanButton.grid(row=0, column=0, sticky="ew", padx=1, pady=5)
-dnd.add_dragable(lessThanButton)
+dndConstruct.add_dragable(lessThanButton)
 greaterThanButton = Button(relationalFrame, text=">")
 greaterThanButton.grid(row=0, column=1, sticky="ew", padx=1, pady=5)
-dnd.add_dragable(greaterThanButton)
+dndConstruct.add_dragable(greaterThanButton)
 lessThanEqualButton = Button(relationalFrame, text="<=")
 lessThanEqualButton.grid(row=0, column=2, sticky="ew", padx=1, pady=5)
-dnd.add_dragable(lessThanEqualButton)
+dndConstruct.add_dragable(lessThanEqualButton)
 greaterThanEqualButton = Button(relationalFrame, text=">=")
 greaterThanEqualButton.grid(row=0, column=3, sticky="ew", padx=1, pady=5)
-dnd.add_dragable(greaterThanEqualButton)
+dndConstruct.add_dragable(greaterThanEqualButton)
 equalButton = Button(relationalFrame, text="==")
 equalButton.grid(row=0, column=4, sticky="ew", padx=1, pady=5)
-dnd.add_dragable(equalButton)
+dndConstruct.add_dragable(equalButton)
 notEqualButton = Button(relationalFrame, text="~=")
 notEqualButton.grid(row=0, column=5, sticky="ew", padx=1, pady=5)
-dnd.add_dragable(notEqualButton)
+dndConstruct.add_dragable(notEqualButton)
 
 logicalFrame = Frame(paletteConstructFrame)
 logicalFrame.grid(row=3, column=0, columnspan=2, sticky="ew")
@@ -307,15 +518,16 @@ logicalFrame.grid_columnconfigure(1, weight=1)
 logicalFrame.grid_columnconfigure(2, weight=1)
 andButton = Button(logicalFrame, text="And")
 andButton.grid(row=0, column=0, sticky="ew", padx=5, pady=5)
-dnd.add_dragable(andButton)
+dndConstruct.add_dragable(andButton)
 orButton = Button(logicalFrame, text="Or")
 orButton.grid(row=0, column=1, sticky="ew", padx=5, pady=5)
-dnd.add_dragable(orButton)
+dndConstruct.add_dragable(orButton)
 notButton = Button(logicalFrame, text="Not")
 notButton.grid(row=0, column=2, sticky="ew", padx=5, pady=5)
-dnd.add_dragable(notButton)
+dndConstruct.add_dragable(notButton)
 operandButton = Button(paletteConstructFrame, text="Operand")
 operandButton.grid(row=4, column=0, columnspan=2, sticky="ew", padx=5, pady=5)
+dndConstruct.add_dragable(operandButton)
 
 paletteFieldFrame = Frame(paletteFrame)
 paletteFieldFrame.grid(row=0, column=0, sticky="nsew")
@@ -324,13 +536,13 @@ paletteFieldFrame.grid_columnconfigure(1, weight=1)
 
 startFieldButton = Button(paletteFieldFrame, text="Start Field", command=openStartField)
 startFieldButton.grid(row=0, column=0, sticky="ew", padx=5, pady=10)
-dnd.add_dragable(startFieldButton)
+dndStartField.add_dragable(startFieldButton)
 field1ByteButton = Button(paletteFieldFrame, text="Field(1 byte)", command=openFieldWindow)
 field1ByteButton.grid(row=0, column=1, sticky="ew", padx=5, pady=10)
-dnd.add_dragable(field1ByteButton)
+dndField1Byte.add_dragable(field1ByteButton)
 field2ByteButton = Button(paletteFieldFrame, text="Field(2 byte)", command=openFieldWindow)
 field2ByteButton.grid(row=1, column=0, sticky="ew", padx=5, pady=10)
-dnd.add_dragable(field2ByteButton)
+dndField2Byte.add_dragable(field2ByteButton)
 field4ByteButton = Button(paletteFieldFrame, text="Field(4 byte)", command=openFieldWindow)
 field4ByteButton.grid(row=1, column=1, sticky="ew", padx=5, pady=10)
 dnd.add_dragable(field4ByteButton)
@@ -342,10 +554,10 @@ field16ByteButton.grid(row=2, column=1, sticky="ew", padx=5, pady=10)
 dnd.add_dragable(field16ByteButton)
 fieldvarSizeButton = Button(paletteFieldFrame, text="Field(Var Size)", command=openFieldWindow)
 fieldvarSizeButton.grid(row=3, column=0, sticky="ew", padx=5, pady=10)
-dnd.add_dragable(fieldvarSizeButton)
+dndFieldVarSize.add_dragable(fieldvarSizeButton)
 endFieldButton = Button(paletteFieldFrame, text="End Field", command=openEndField)
 endFieldButton.grid(row=3, column=1, sticky="ew", padx=5, pady=10)
-dnd.add_dragable(endFieldButton)
+dndEndField.add_dragable(endFieldButton)
 referenceListButton = Button(paletteFieldFrame, text="Reference List", command=openReferenceList)
 referenceListButton.grid(row=4, column=0, sticky="ew", padx=5, pady=10)
 dnd.add_dragable(referenceListButton)
