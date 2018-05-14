@@ -1,4 +1,4 @@
-#import ProtocolDecisionTree
+import ProtocolDecisionTree
 import DissectedPCAP
 import PCAP
 
@@ -6,7 +6,7 @@ class DissectorScript():
 
     def __init__(self):
 
-        self.pdt
+        self.ProtocolDecisionTree = ProtocolDecisionTree.ProtocolDecisionTree()
         self.dissectedPCAP = DissectedPCAP.DissectedPCAP()
         self.PCAP = PCAP.PCAP()
 

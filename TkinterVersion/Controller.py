@@ -1,7 +1,6 @@
-#import PCAP
-#import DissectedPCAP
-#import DissectorScript
-#import WorkspaceManager
+import DissectorScript
+import WorkspaceManager
+import ProtocolDecisionTree
 import Workspace
 
 
@@ -9,15 +8,14 @@ class Controller():
 
     def __init__(self):
 
-        self.PCAP = 0
-        self.DissectedPCAP = 0
-        self.DissectorScript = 0
-        self.WorkspaceManager = 0
+        self.DissectorScript = DissectorScript.DissectorScript()
+        self.WorkspaceManager = WorkspaceManager.WorkspaceManager()
+        self.ProtocolDecisionTree = ProtocolDecisionTree.ProtocolDecisionTree()
         self.workspace = Workspace.Workspace("Workspace1")
 
     def generateXMLFormat(self):
 
-        self.workspace.saveProjectAsXML()
+        self.WorkspaceManager.workspace1.saveProjectAsXML()
         print("XML File Generated")
 
     def generateLUAFormat(self):
