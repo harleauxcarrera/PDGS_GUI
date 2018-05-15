@@ -15,4 +15,3 @@ class DissectorScript():
 
     def getDissectorScript(self):
         print("Getting Dissector Script")
-

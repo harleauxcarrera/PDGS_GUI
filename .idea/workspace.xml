@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1e4c518-f3ba-418d-875c-f6371a5cf701" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PDGS_GUI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PDGS_GUI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TkinterVersion/packetStreamArea.py" beforeDir="false" afterPath="$PROJECT_DIR$/TkinterVersion/packetStreamArea.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TkinterVersion/DissectorScript.py" beforeDir="false" afterPath="$PROJECT_DIR$/TkinterVersion/DissectorScript.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TkinterVersion/projectNavigator.py" beforeDir="false" afterPath="$PROJECT_DIR$/TkinterVersion/projectNavigator.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,18 +18,10 @@
       <file leaf-file-name="PDGS_GUI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TkinterVersion/PDGS_GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="301" column="37" lean-forward="true" selection-start-line="301" selection-start-column="37" selection-end-line="301" selection-end-column="37" />
+            <state relative-caret-position="270">
+              <caret line="572" column="46" lean-forward="true" selection-start-line="572" selection-start-column="46" selection-end-line="572" selection-end-column="46" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <element signature="e#493#1522#0" />
-                <element signature="e#1550#2597#0" />
-                <element signature="e#2633#3680#0" />
-                <element signature="e#3664#4647#0" />
-                <element signature="e#4674#5653#0" />
-                <element signature="e#5701#6680#0" />
-                <element signature="e#4677#5656#0" />
-                <element signature="e#7607#8453#0" />
               </folding>
             </state>
           </provider>
@@ -39,8 +30,8 @@
       <file leaf-file-name="DissectorScript.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TkinterVersion/DissectorScript.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+            <state relative-caret-position="187">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -48,76 +39,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="packetStreamArea.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TkinterVersion/packetStreamArea.py">
+      <file leaf-file-name="projectNavigator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TkinterVersion/projectNavigator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="296">
+              <caret line="30" column="76" lean-forward="true" selection-start-line="30" selection-start-column="76" selection-end-line="30" selection-end-column="76" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="consoleArea.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TkinterVersion/consoleArea.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DissectedPCAP.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TkinterVersion/DissectedPCAP.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="3" selection-start-column="3" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TkinterVersion/Controller.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="22" selection-start-column="22" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WorkspaceManager.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TkinterVersion/WorkspaceManager.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="luaTest.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TkinterVersion/Workspace Area Initailizer/luaTest.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="ProtocolDecisionTree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TkinterVersion/ProtocolDecisionTree.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EndNode.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TkinterVersion/EndNode.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -153,14 +82,16 @@
         <option value="$PROJECT_DIR$/TkinterVersion/PacketPreviewArea.py" />
         <option value="$PROJECT_DIR$/TkinterVersion/packetPreviewArea.py" />
         <option value="$PROJECT_DIR$/TkinterVersion/packetStreamArea.py" />
+        <option value="$PROJECT_DIR$/TkinterVersion/DissectorScript.py" />
+        <option value="$PROJECT_DIR$/TkinterVersion/projectNavigator.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
-    <option name="y" value="-804" />
-    <option name="width" value="1215" />
-    <option name="height" value="804" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -170,7 +101,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -187,11 +117,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -290,44 +221,45 @@
       <option name="presentableId" value="Default" />
       <updated>1525647842593</updated>
     </task>
+    <task id="LOCAL-00001" summary="updated project">
+      <created>1526342990600</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1526342990600</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.15104167" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.5005208" side_tool="true" weight="0.32925585" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.32925585" />
-      <window_info anchor="bottom" id="Version Control" order="3" sideWeight="0.49947917" weight="0.32925585" />
-      <window_info anchor="bottom" id="Python Console" order="0" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.3312946" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="1" weight="0.32925585" />
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.39959225" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49876544" visible="true" weight="0.3031609" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21563786" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.215625" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50104165" side_tool="true" weight="0.32925585" />
+      <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49895832" weight="0.32925585" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49876544" visible="true" weight="0.3027523" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5012346" side_tool="true" visible="true" weight="0.3031609" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="updated project" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated project" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -335,13 +267,30 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/PDGS_GUI.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7837">
+          <caret line="461" column="79" selection-start-line="461" selection-start-column="79" selection-end-line="461" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/DissectorScript.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TkinterVersion/fieldWindow.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -360,26 +309,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/scriptWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-257">
-          <caret line="22" column="39" lean-forward="true" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/Workspace Area Initailizer/xmlTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="15" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/scriptWindow.py" />
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/Workspace Area Initailizer/xmlTest.py" />
     <entry file="file://$PROJECT_DIR$/TkinterVersion/Project.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -391,9 +322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -425,13 +353,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/dissarea.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/dissarea.py" />
     <entry file="file://$PROJECT_DIR$/TkinterVersion/PCAP.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -439,20 +361,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/rawPacketArea.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/rawPacketArea.py" />
     <entry file="file://$PROJECT_DIR$/TkinterVersion/dissectedStreamArea.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="47" lean-forward="true" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -505,13 +418,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/ICMP.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="83" lean-forward="true" selection-start-line="1" selection-start-column="83" selection-end-line="1" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/ICMP.xml" />
     <entry file="file://$PROJECT_DIR$/TkinterVersion/Controller.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -523,22 +430,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/Workspace Area Initailizer/luaTest.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/TkinterVersion/packetStreamArea.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="46" lean-forward="true" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -596,13 +494,6 @@
     <entry file="file://$PROJECT_DIR$/Alex/BackEnd/ProtocolDecisionTree.py" />
     <entry file="file://$PROJECT_DIR$/Alex/ConsoleArea/ConsoleArea.py" />
     <entry file="file://$PROJECT_DIR$/Alex/ConsoleArea/ConsoleAreaV2.py" />
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/projectNavigator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TkinterVersion/packetPreviewArea.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -624,13 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/WorkspaceManager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TkinterVersion/DissectedPCAP.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -645,13 +529,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/DissectorScript.py">
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/WorkspaceManager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="41" selection-start-line="9" selection-start-column="41" selection-end-line="9" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -659,6 +540,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/DissectorScript.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/projectNavigator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="30" column="76" lean-forward="true" selection-start-line="30" selection-start-column="76" selection-end-line="30" selection-end-column="76" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
@@ -667,18 +565,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TkinterVersion/PDGS_GUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="301" column="37" lean-forward="true" selection-start-line="301" selection-start-column="37" selection-end-line="301" selection-end-column="37" />
+        <state relative-caret-position="270">
+          <caret line="572" column="46" lean-forward="true" selection-start-line="572" selection-start-column="46" selection-end-line="572" selection-end-column="46" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <element signature="e#493#1522#0" />
-            <element signature="e#1550#2597#0" />
-            <element signature="e#2633#3680#0" />
-            <element signature="e#3664#4647#0" />
-            <element signature="e#4674#5653#0" />
-            <element signature="e#5701#6680#0" />
-            <element signature="e#4677#5656#0" />
-            <element signature="e#7607#8453#0" />
           </folding>
         </state>
       </provider>
