@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a1e4c518-f3ba-418d-875c-f6371a5cf701" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TkinterVersion/DissectorScript.py" beforeDir="false" afterPath="$PROJECT_DIR$/TkinterVersion/DissectorScript.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TkinterVersion/projectNavigator.py" beforeDir="false" afterPath="$PROJECT_DIR$/TkinterVersion/projectNavigator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TkinterVersion/PDGS_GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/TkinterVersion/PDGS_GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TkinterVersion/dndManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/TkinterVersion/dndManager.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,10 +18,66 @@
       <file leaf-file-name="PDGS_GUI.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TkinterVersion/PDGS_GUI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="572" column="46" lean-forward="true" selection-start-line="572" selection-start-column="46" selection-end-line="572" selection-end-column="46" />
+            <state relative-caret-position="85">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
               <folding>
-                <element signature="e#0#21#0" expanded="true" />
+                <element signature="e#517#1546#0" />
+                <element signature="e#557#747#0" />
+                <element signature="e#1574#2622#0" />
+                <element signature="e#2660#3643#0" />
+                <element signature="e#3679#4658#0" />
+                <element signature="e#4696#5680#0" />
+                <element signature="e#5720#6706#0" />
+                <element signature="e#6743#7589#0" />
+                <element signature="e#7626#8581#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dndManager.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TkinterVersion/dndManager.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="75" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Field.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TkinterVersion/Field.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FieldManager.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TkinterVersion/FieldManager.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fieldWindow.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TkinterVersion/fieldWindow.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TkinterVersion/Controller.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+              <folding>
+                <element signature="e#0#22#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -42,8 +98,8 @@
       <file leaf-file-name="projectNavigator.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TkinterVersion/projectNavigator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="30" column="76" lean-forward="true" selection-start-line="30" selection-start-column="76" selection-end-line="30" selection-end-column="76" />
+            <state relative-caret-position="221">
+              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -84,6 +140,9 @@
         <option value="$PROJECT_DIR$/TkinterVersion/packetStreamArea.py" />
         <option value="$PROJECT_DIR$/TkinterVersion/DissectorScript.py" />
         <option value="$PROJECT_DIR$/TkinterVersion/projectNavigator.py" />
+        <option value="$PROJECT_DIR$/TkinterVersion/fieldWindow.py" />
+        <option value="$PROJECT_DIR$/TkinterVersion/dndManager.py" />
+        <option value="$PROJECT_DIR$/TkinterVersion/PDGS_GUI.py" />
       </list>
     </option>
   </component>
@@ -101,6 +160,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -117,7 +177,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -228,19 +287,33 @@
       <option name="project" value="LOCAL" />
       <updated>1526342990600</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="project nav">
+      <created>1526351185323</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1526351185323</updated>
+    </task>
+    <task id="LOCAL-00003" summary="project nav folder icon">
+      <created>1526351250197</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1526351250197</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.215625" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.215625" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50104165" side_tool="true" weight="0.32925585" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49895832" weight="0.32925585" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49876544" visible="true" weight="0.3027523" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49876544" weight="0.18654434" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -251,7 +324,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32925585" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -259,11 +332,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated project" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated project" />
+    <MESSAGE value="project nav" />
+    <MESSAGE value="project nav folder icon" />
+    <option name="LAST_COMMIT_MESSAGE" value="project nav folder icon" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -272,7 +347,15 @@
         <state relative-caret-position="7837">
           <caret line="461" column="79" selection-start-line="461" selection-start-column="79" selection-end-line="461" selection-end-column="79" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#517#1546#0" />
+            <element signature="e#557#747#0" />
+            <element signature="e#1574#2622#0" />
+            <element signature="e#2660#3643#0" />
+            <element signature="e#3679#4658#0" />
+            <element signature="e#4696#5680#0" />
+            <element signature="e#5720#6706#0" />
+            <element signature="e#6743#7589#0" />
+            <element signature="e#7626#8581#0" />
           </folding>
         </state>
       </provider>
@@ -287,25 +370,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/fieldWindow.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TkinterVersion/dndCanvas.py" />
     <entry file="file://$PROJECT_DIR$/TkinterVersion/packetStreamArea.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/dndManager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -369,13 +438,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/Field.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="29" lean-forward="true" selection-start-column="29" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TkinterVersion/Construct.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -397,13 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/FieldManager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TkinterVersion/StartNode.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -415,14 +470,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/ICMP.xml" />
-    <entry file="file://$PROJECT_DIR$/TkinterVersion/Controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -543,6 +590,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/ICMP.xml" />
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/Field.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/FieldManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="48" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/Controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/fieldWindow.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="21" lean-forward="true" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TkinterVersion/DissectorScript.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -555,20 +634,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TkinterVersion/projectNavigator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="30" column="76" lean-forward="true" selection-start-line="30" selection-start-column="76" selection-end-line="30" selection-end-column="76" />
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/TkinterVersion/dndManager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="75" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TkinterVersion/PDGS_GUI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="572" column="46" lean-forward="true" selection-start-line="572" selection-start-column="46" selection-end-line="572" selection-end-column="46" />
+        <state relative-caret-position="85">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#517#1546#0" />
+            <element signature="e#557#747#0" />
+            <element signature="e#1574#2622#0" />
+            <element signature="e#2660#3643#0" />
+            <element signature="e#3679#4658#0" />
+            <element signature="e#4696#5680#0" />
+            <element signature="e#5720#6706#0" />
+            <element signature="e#6743#7589#0" />
+            <element signature="e#7626#8581#0" />
           </folding>
         </state>
       </provider>

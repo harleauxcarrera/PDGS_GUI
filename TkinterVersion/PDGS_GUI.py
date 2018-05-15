@@ -24,13 +24,9 @@ class Field1ByteDragManager():
         widget.configure(cursor="hand1")
 
     def on_start(self, event):
-        # you could use this method to create a floating window
-        # that represents what is being dragged.
         pass
 
     def on_drag(self, event):
-        # you could use this method to move a floating window that
-        # represents what you're dragging
         pass
 
     def on_drop(self, event):
@@ -40,7 +36,6 @@ class Field1ByteDragManager():
         button = Button(target, text="Field1Byte", command=openFieldWindow)
         print("Dragged to x ",x," and y ",y)
         try:
-            #target.create_rectangle(x-10-260, y-5-125, x+10-260, y+5-125, fill="blue")
             target.create_window(x-260, y-125, window=button)
         except:
             pass
@@ -54,13 +49,9 @@ class DragManager():
         widget.configure(cursor="hand1")
 
     def on_start(self, event):
-        # you could use this method to create a floating window
-        # that represents what is being dragged.
         pass
 
     def on_drag(self, event):
-        # you could use this method to move a floating window that
-        # represents what you're dragging
         pass
 
     def on_drop(self, event):
@@ -68,10 +59,8 @@ class DragManager():
         x,y = event.widget.winfo_pointerxy()
         target = event.widget.winfo_containing(x,y)
         button = Button(target, text="FieldButton", command=openFieldWindow)
-        #button =
         print("Dragged to x ",x," and y ",y)
         try:
-            #target.create_rectangle(x-10-260, y-5-125, x+10-260, y+5-125, fill="blue")
             target.create_window(x-260, y-125, window=button)
         except:
             pass
@@ -85,13 +74,9 @@ class StartFieldDragManager():
         widget.configure(cursor="hand1")
 
     def on_start(self, event):
-        # you could use this method to create a floating window
-        # that represents what is being dragged.
         pass
 
     def on_drag(self, event):
-        # you could use this method to move a floating window that
-        # represents what you're dragging
         pass
 
     def on_drop(self, event):
@@ -100,7 +85,6 @@ class StartFieldDragManager():
         target = event.widget.winfo_containing(x,y)
         button = Button(target, text="StartField", command=openStartField)
         try:
-            #target.create_rectangle(x-10-260, y-5-125, x+10-260, y+5-125, fill="blue")
             target.create_window(x-260, y-125, window=button)
         except:
             pass
@@ -114,13 +98,9 @@ class EndFieldDragManager():
         widget.configure(cursor="hand1")
 
     def on_start(self, event):
-        # you could use this method to create a floating window
-        # that represents what is being dragged.
         pass
 
     def on_drag(self, event):
-        # you could use this method to move a floating window that
-        # represents what you're dragging
         pass
 
     def on_drop(self, event):
@@ -129,7 +109,6 @@ class EndFieldDragManager():
         target = event.widget.winfo_containing(x,y)
         button = Button(target, text="EndField", command=openEndField)
         try:
-            #target.create_rectangle(x-10-260, y-5-125, x+10-260, y+5-125, fill="blue")
             target.create_window(x-260, y-125, window=button)
         except:
             pass
@@ -143,13 +122,9 @@ class Field2ByteDragManager():
         widget.configure(cursor="hand1")
 
     def on_start(self, event):
-        # you could use this method to create a floating window
-        # that represents what is being dragged.
         pass
 
     def on_drag(self, event):
-        # you could use this method to move a floating window that
-        # represents what you're dragging
         pass
 
     def on_drop(self, event):
@@ -158,7 +133,6 @@ class Field2ByteDragManager():
         target = event.widget.winfo_containing(x,y)
         button = Button(target, text="Field2Byte", command=openFieldWindow)
         try:
-            #target.create_rectangle(x-10-260, y-5-125, x+10-260, y+5-125, fill="blue")
             target.create_window(x-260, y-125, window=button)
         except:
             pass
@@ -172,13 +146,9 @@ class FieldVarSizeDragManager():
         widget.configure(cursor="hand1")
 
     def on_start(self, event):
-        # you could use this method to create a floating window
-        # that represents what is being dragged.
         pass
 
     def on_drag(self, event):
-        # you could use this method to move a floating window that
-        # represents what you're dragging
         pass
 
     def on_drop(self, event):
@@ -187,7 +157,6 @@ class FieldVarSizeDragManager():
         target = event.widget.winfo_containing(x,y)
         button = Button(target, text="FieldVarSize", command=openFieldWindow)
         try:
-            #target.create_rectangle(x-10-260, y-5-125, x+10-260, y+5-125, fill="blue")
             target.create_window(x-260, y-125, window=button)
         except:
             pass
@@ -201,13 +170,9 @@ class ConnectorDragManager():
         widget.configure(cursor="hand1")
 
     def on_start(self, event):
-        # you could use this method to create a floating window
-        # that represents what is being dragged.
         pass
 
     def on_drag(self, event):
-        # you could use this method to move a floating window that
-        # represents what you're dragging
         pass
 
     def on_drop(self, event):
@@ -228,13 +193,9 @@ class ConstructDragManager():
         widget.configure(cursor="hand1")
 
     def on_start(self, event):
-        # you could use this method to create a floating window
-        # that represents what is being dragged.
         pass
 
     def on_drag(self, event):
-        # you could use this method to move a floating window that
-        # represents what you're dragging
         pass
 
     def on_drop(self, event):
@@ -244,7 +205,6 @@ class ConstructDragManager():
         button = Button(target, text="~")
         try:
             target.create_window(x - 260, y - 125, window=button)
-            #target.create_rectangle(x-2-260, y-30-125, x+2-260, y+30-125, fill="black")
         except:
             pass
 
@@ -399,7 +359,7 @@ menuFrame.pack(side=TOP, fill=X)
 createProjectButton = Button(menuFrame, text="Create Project", command=openCreateProject)
 createProjectButton.pack(side=LEFT, padx=5, pady=5, fill=X, expand=1)
 
-saveProjectButton = Button(menuFrame, text="Save Project", command=saveAsFile)
+saveProjectButton = Button(menuFrame, text="Save Project", command=SystemController.generateXMLFormat)
 saveProjectButton.pack(side=LEFT, padx=5, pady=5, fill=X, expand=1)
 
 closeProjectButton = Button(menuFrame, text="Close Project", command=root.destroy)
@@ -414,7 +374,7 @@ importProjectButton.pack(side=LEFT, padx=5, pady=5, fill=X, expand=1)
 exportProjectButton = Button(menuFrame, text="Export Project", command=exportProject)
 exportProjectButton.pack(side=LEFT, padx=5, pady=5, fill=X, expand=1)
 
-generateScriptButton = Button(menuFrame, text="Generate Dissector Script", command=SystemController.generateXMLFormat)
+generateScriptButton = Button(menuFrame, text="Generate Dissector Script", command=SystemController.generateLUAFormat)
 generateScriptButton.pack(side=LEFT, padx=5, pady=5, fill=X, expand=1)
 
 organizeViewsButton = Button(menuFrame, text="Organize Views", command=organizeViews)
