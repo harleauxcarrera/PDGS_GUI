@@ -11,13 +11,12 @@ class packetStreamArea(Toplevel):
         packetStreamFrame = Frame(self)
         packetStreamFrame.pack(fill=BOTH, expand=1)
 
-        frameButton = tk.Frame(packetStreamFrame, width=100, height=100)
-        frameButton.grid(row=0, sticky='nsew')
-
         self.treeview_frame = tk.Frame(packetStreamFrame, width=100, height=100)
         self.treeview_frame.grid(row=1, sticky='nsew')
 
-        self.treeview = ttk.Treeview(self.treeview_frame)
+        scrollbar = Scrollbar(main, orient="vertical")
+        scrollbar2 = Scrollbar(main, orient="horizontal")
+        self.treeview = ttk.Treeview(self.treeview_frame, yscrollcommand=scrollbar.set, xscrollcommand=scrollbar2.set)
         self.treeview.pack(fill='both', expand=True)
 
         # List of tuples for each packet stream, containing the number, time, source, destination, protocol, and info
@@ -45,19 +44,6 @@ class packetStreamArea(Toplevel):
                          "[TCP segment of a reassembled PDU]")]
 
         self.treeview['columns'] = ('No.', 'Time', 'Source', 'Destination', 'Protocol', 'Info')
-
-        # Window min, max, close button, and title
-        title = tk.Label(frameButton, text="Packet Stream Area", font='System 14 bold', background='lightblue')
-        title.grid(row=0, column=0)
-
-        minimize = tk.Button(frameButton, text="_", bg="lightblue")
-        minimize.grid(row=0, column=1)
-
-        maximize = tk.Button(frameButton, text="[ ]", bg='lightblue')
-        maximize.grid(row=0, column=2)
-
-        close = tk.Button(frameButton, text="X", bg='lightblue')
-        close.grid(row=0, column=3)
 
         # supress the unused identifier column (first column) and keep it out of view
         self.treeview['show'] = 'headings'
