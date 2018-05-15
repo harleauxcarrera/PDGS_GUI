@@ -1,7 +1,6 @@
 import DissectorScript
 import WorkspaceManager
 import ProtocolDecisionTree
-import Workspace
 
 
 class Controller():
@@ -11,7 +10,6 @@ class Controller():
         self.DissectorScript = DissectorScript.DissectorScript()
         self.WorkspaceManager = WorkspaceManager.WorkspaceManager()
         self.ProtocolDecisionTree = ProtocolDecisionTree.ProtocolDecisionTree()
-        self.workspace = Workspace.Workspace("Workspace1")
 
     def generateXMLFormat(self):
 
